@@ -1,0 +1,56 @@
+body {
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    background-color: #F6F6F6;
+    color: #111111;
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+  
+  .container {
+    max-width: 375px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1439px) {
+    .container {
+      max-width: 768px;
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+
+    .main-container {
+      flex-direction: row;
+    }
+  }
+  
+  @media screen and (min-width: 1440px) {
+    .container {
+      max-width: 1440px;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .main-container {
+      flex-direction: row;
+    }
+  }

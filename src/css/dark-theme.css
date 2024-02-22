@@ -1,0 +1,13 @@
+/**
+  |============================
+  | include css partials with
+  | default @import url()
+  |============================
+*/
+@import url('./dark-base.css');
+@import url('./dark-header.css');
+@import url('./dark-categories.css');
+@import url('./dark-home.css');
+@import url('./dark-shopping-list.css');
+@import url('./dark-menu.css');
+@import url('./dark-pop-up.css');
