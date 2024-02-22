@@ -1,1 +1,10 @@
-
+.toggle-theme{
+width: 40px;
+height: 24px;
+padding: 0;
+border: 0;
+background-color: transparent;
+background-image: var(--toggl-bg);
+background-repeat: no-repeat;
+background-size: contain;
+}
