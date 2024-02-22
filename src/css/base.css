@@ -29,6 +29,14 @@ body {
   .main-container {
     display: flex;
     flex-direction: column;
+    gap: 40px;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 40px;
   }
   
   @media screen and (min-width: 768px) and (max-width: 1439px) {
@@ -39,7 +47,12 @@ body {
     }
 
     .main-container {
+      gap: 98px;
+    }
+
+    .sidebar {
       flex-direction: row;
+      gap: 32px;
     }
   }
   
@@ -52,5 +65,17 @@ body {
 
     .main-container {
       flex-direction: row;
+      gap: 40px;
+    }
+
+    .sidebar {
+      flex-direction: column;
+      gap: 86px;
+    }
+
+    .home-page {
+      display: flex;
+      flex-grow: 1;
+      padding-top: 40px;
     }
   }
