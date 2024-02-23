@@ -1,9 +1,21 @@
+:root{
+--main-bg: #F6F6F6;
+--toggl-bg: url(../img/header/switcher_whit.svg);
+--text: #111111;
+}
+
+:root[data-theme ='dark']{
+  --main-bg: #202024;
+  --toggl-bg: url(../img/header/switcher_dark.svg);
+  --text: rgba(255, 255, 255, 0.6);;
+}
+
 body {
     font-family: 'DMSans', sans-serif;
     font-style: normal;
     font-weight: 400;
-    background-color: #F6F6F6;
-    color: #111111;
+    background-color: var(--main-bg);
+    color: var(--text);
   }
   
   .visually-hidden {
