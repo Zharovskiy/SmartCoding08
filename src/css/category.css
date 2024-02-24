@@ -23,6 +23,10 @@
     height: 535px;
 }
 
+.overlay {
+    display: none;
+}
+
 .book-image {
     width: 100%;
     border-radius: 8px;
@@ -66,6 +70,10 @@
     .book-card {
         width: 218px;
         height: 366px;
+    }
+
+    .overlay {
+        display: none;
     }
 }
 
