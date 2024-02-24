@@ -51,7 +51,7 @@
         letter-spacing: 0.33em;
         text-align: left;
         flex: none;
-            order: 1;
-            flex-grow: 0;
-            margin: 4px 0px;
+        border: 1;
+        flex-grow: 0;
+        margin: 4px 0px;
 }
