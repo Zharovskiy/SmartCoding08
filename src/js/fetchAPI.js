@@ -1,25 +1,26 @@
-import axios from "axios";
+import axios from 'axios';
 
-export class BooksApi {
-    constructor() {}
-    booksAllCategories() {
-        axios.defaults.baseURL = 'https://books-backend.p.goit.global/books';
-        return axios.get('/category-list');
+axios.defaults.baseURL = `https://books-backend.p.goit.global/books`;
+
+const backendAPI = {
+  getCategoryList: async function () {
+    try {
+      const response = await axios.get(`/category-list`);
+      return response.data;
+    } catch (error) {
+      console.log(error);
     }
-    booksPopular() {
-        axios.defaults.baseURL = 'https://books-backend.p.goit.global/books';
-        return axios.get('/top-books');
+  },
+
+  getBestSellers: async function () {
+    try {
+      const response = await axios.get(`/top-books`);
+      return response.data;
+    } catch (error) {
+      console.log(error);
     }
-    booksCategorySeparate(selectedCategory) {
-        axios.defaults.baseURL = 'https://books-backend.p.goit.global/books';
-        return axios.get('/category', {
-            params: {
-                category: selectedCategory,
-            }
-        });
-    }
-    bookId(bookId) {
-        axios.defaults.baseURL = 'https://books-backend.p.goit.global/books';
-        return axios.get(bookId);
-    }
-}
+  },
+
+};
+
+export default backendAPI;

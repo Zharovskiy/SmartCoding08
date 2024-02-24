@@ -6,15 +6,27 @@ import * as category from './js/category.js'
 import * as shoppingList from './js/shopping-list.js';
 import * as menu from './js/menu.js';
 import * as popUp from './js/pop-up.js';
-import { BooksApi } from './js/fetchAPI.js';
-const booksApi = new BooksApi();
-async function loadData () {
-    // loadBtn.insertAdjacentHTML('afterbegin', '<span class="loader"></span>');
-    try {
-      const response = await booksApi.bookId('643282b1e85766588626a0dc');
-      console.log(response)
-    }
-    catch (error) {
-    }
-  }
-loadData()
+
+
+
+
+
+
+
+
+// Для тестування localStorage
+import { LocalStorage } from './js/localStorage.js';
+const localStorage = new LocalStorage();
+
+const books = {
+  id: '1',
+  urlImg: '',
+  name: '',
+  category: '',
+  description: '',
+  author: '',
+  urlMarket: [] 
+}
+
+const a = localStorage.getProducts();
+console.log(a);
