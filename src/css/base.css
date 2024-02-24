@@ -67,8 +67,11 @@ body {
       flex-direction: row;
       gap: 32px;
     }
+    .btn-menu{
+      display: none;
+    }
   }
-  
+
   @media screen and (min-width: 1440px) {
     .container {
       max-width: 1440px;
@@ -90,5 +93,8 @@ body {
       display: flex;
       flex-grow: 1;
       padding-top: 40px;
+    }
+    .btn-menu{
+      display: none;
     }
   }

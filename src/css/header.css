@@ -7,6 +7,8 @@ background-color: transparent;
 background-image: var(--toggl-bg);
 background-repeat: no-repeat;
 background-size: contain;
+
+margin-right: 14px;
 }
 .cont-header{
     display: flex;
@@ -19,7 +21,6 @@ background-size: contain;
 .list-header{
     display: flex;
     margin-right: auto;
-    
 }
 .logo-header{
     display: flex;
@@ -33,10 +34,8 @@ background-size: contain;
     margin-right: 76px;
 }
 .list-nav{
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    
+        display: none;
+        
 }
 .link-nav{
     display: flex;
@@ -52,9 +51,25 @@ background-size: contain;
 .btn-menu{
     padding: 0;
     margin: 0;
+    background-color: #FFFFFF;
+    border: none;
+    height: 28px;
 }
 .icon-menu-header{
     stroke: #111;
     width: 100%;
     height: 100%;
+}
+.icon-menu-header:hover{
+    stroke: #4F2EE8;
+}
+.buttons-header{
+    align-items: center;
+}
+@media screen and (min-width: 768px) {
+    .list-nav{
+        display: flex;
+        align-items: center;
+        gap: 24px;
+}
 }
