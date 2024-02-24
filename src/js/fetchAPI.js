@@ -20,7 +20,6 @@ const backendAPI = {
       console.log(error);
     }
   },
-
 };
 
 export default backendAPI;
