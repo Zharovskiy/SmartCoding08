@@ -1,7 +1,11 @@
+import { LocalStorage } from './localStorage.js';
+
 document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById('modal');
   const closeButton = document.querySelector('.close');
   const addToCartButton = document.querySelector('.add-to-cart');
+  
+  const localStorageInstance = new LocalStorage();
   
   function openModal() {
     modal.style.display = 'block';
@@ -53,10 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Перевірка, чи книга вже є в кошику
-    const shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
-    const isInShoppingList = shoppingList.some(function(item) {
-      return item.id === book.id;
-    });
+    const isInShoppingList = localStorageInstance.checkProduct(book.id).hasProd;
     
     if (isInShoppingList) {
       addToCartButton.textContent = 'Remove from Shopping List';
@@ -77,7 +78,6 @@ document.addEventListener('DOMContentLoaded', function() {
       { name: 'Apple Books', url: 'https://books.apple.com' }
     ]
   };
-  
   
   updateModal(exampleBook);
 });
