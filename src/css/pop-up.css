@@ -1,0 +1,152 @@
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(17, 17, 17, 0.4);
+}
+
+.modal-content {
+  margin: 15% auto;
+  padding: 20px;
+  width: 335px;
+  height: 762px;
+  max-width: 600px;
+  position: relative;
+  border-radius: 18px;
+  box-sizing: border-box;
+  border: 2px solid rgb(17, 17, 17);
+  background-color: rgb(255, 255, 255);
+}
+
+.close {
+  position: absolute;
+  top: 6px;
+  right: calc(6px + 14px);
+  width: 14px;
+  height: 14px;
+  color: #111111;
+  /* float: right; */
+  font-size: 42px;
+  font-weight: lighter;
+  cursor: pointer;
+  transform: translate(50%, -50%);
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.book-cover {
+  position: static;
+  width: 287px;
+  height: 408px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 14px 0px;
+  border-radius: 8px;
+  background-color: #777;
+  background: url(https://inbenefit.com/wp-content/uploads/2017/07/%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0-%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D1%8F%D1%89%D0%B8%D1%85-%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA-%D0%BD%D0%B0-wordpress-01.jpeg)
+    no-repeat center;
+}
+
+.add-to-cart {
+  position: absolute;
+  width: 220px;
+  height: 46px;
+  left: 62px;
+  top: 676px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 14px 28px 14px 28px;
+  box-sizing: border-box;
+  border: 2px solid rgb(79, 46, 232);
+  border-radius: 40px;
+  color: rgb(17, 17, 17);
+  font-family: 'DM Sans', serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -1%;
+  text-align: left;
+  text-transform: uppercase;
+  background-color: rgb(255, 255, 255);
+  left: 50%;
+  transform: translateX(-50%);
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 10px;
+}
+
+.add-to-cart:hover,
+.add-to-cart:focus {
+  border-radius: 40px;
+  background: rgb(79, 46, 232);
+  color: rgb(255, 255, 255);
+}
+
+.links a {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* 768px */
+@media (min-width: 768px) {
+  .modal-content {
+    position: absolute;
+    width: 579px;
+    height: 465px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .add-to-cart {
+    position: absolute;
+    width: 499px;
+    height: 64px;
+    left: 50%;
+    top: 361px;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 173px 20px 173px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 10px;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+
+  .book-cover {
+    position: static;
+    width: 192px;
+    height: 281px;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    margin: 0;
+  }
+}
+
+/* 1380px */
+@media (min-width: 1380px) {
+  .modal-content {
+    max-width: 800px;
+    margin: 5% auto;
+  }
+}
