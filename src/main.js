@@ -30,3 +30,9 @@ const books = {
 
 const a = localStorage.getProducts();
 console.log(a);
+
+
+
+// Для виклику сторінки Category
+import loadBooksCategory from './js/category.js';
+loadBooksCategory('Hardcover Fiction');
