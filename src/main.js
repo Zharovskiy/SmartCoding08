@@ -6,3 +6,27 @@ import * as category from './js/category.js'
 import * as shoppingList from './js/shopping-list.js';
 import * as menu from './js/menu.js';
 import * as popUp from './js/pop-up.js';
+
+
+
+
+
+
+
+
+// Для тестування localStorage
+import { LocalStorage } from './js/localStorage.js';
+const localStorage = new LocalStorage();
+
+const books = {
+  id: '1',
+  urlImg: '',
+  name: '',
+  category: '',
+  description: '',
+  author: '',
+  urlMarket: [] 
+}
+
+const a = localStorage.getProducts();
+console.log(a);
