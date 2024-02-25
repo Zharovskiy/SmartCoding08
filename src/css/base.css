@@ -1,13 +1,17 @@
 :root{
 --main-bg: #F6F6F6;
 --toggl-bg: url(../images/header/switcher_whit.svg);
---text: #111111;
+--text-bestsellers: #111111;
+--text-sb: rgba(17, 17, 17, 0.6);
+--scrollbar-bg: #e0e0e0;
 }
 
 :root[data-theme ='dark']{
   --main-bg: #202024;
   --toggl-bg: url(../images/header/switcher_dark.svg);
-  --text: rgba(255, 255, 255, 0.6);;
+  --text-bestsellers: #fff;
+  --text-sb: rgba(255, 255, 255, 0.6);
+  --scrollbar-bg: rgba(17, 17, 17, 0.6);
 }
 
 body {
