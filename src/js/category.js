@@ -12,7 +12,7 @@ function renderBooks (data) {
     const markupCard = data.map((book) => {
             createBookCard(book);
             // console.log(createBookCard(book)) 
-         }).join('');
+         }).join('\n');
 
          console.log(markupCard);
 
