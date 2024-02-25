@@ -29,7 +29,7 @@ const books = {
 }
 
 const a = localStorage.getProducts();
-console.log(a);
+// console.log(a);
 
 
 
