@@ -1,15 +1,15 @@
 .toggle-theme{
-width: 40px;
-height: 24px;
-padding: 0;
-border: 0;
-background-color: transparent;
-background-image: var(--toggl-bg);
-background-repeat: no-repeat;
-background-size: contain;
-
-margin-right: 14px;
+    width: 40px;
+    height: 24px;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    background-image: var(--toggl-bg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 14pxж
 }
+
 .cont-header{
     display: flex;
     border-radius: 0 0 8px 8px;
@@ -68,17 +68,28 @@ margin-right: 14px;
 .buttons-header{
     align-items: center;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1439px) {
     .list-nav{
         display: flex;
         align-items: center;
         gap: 24px;
        
     }
-        .item-list-nav:hover{
-            padding: 8px 16px;
-            border-radius: 36px;
-            background-color: #EAC645;
-            transition: all 0.3s ease;
-        }
+        
+    .item-list-nav:hover{
+        padding: 8px 16px;
+        border-radius: 36px;
+        background-color: #EAC645;
+        transition: all 0.3s ease;
+    }
+
+    .btn-menu{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .btn-menu{
+        display: none;
+    }
 }
