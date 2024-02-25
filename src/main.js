@@ -15,24 +15,26 @@ export const pageContainer = document.querySelector('.home-page');
 
 
 // Для тестування localStorage
-import { LocalStorage } from './js/localStorage.js';
-const localStorage = new LocalStorage();
+// import { LocalStorage } from './js/localStorage.js';
+// const localStorage = new LocalStorage();
 
-const books = {
-  id: '1',
-  urlImg: '',
-  name: '',
-  category: '',
-  description: '',
-  author: '',
-  urlMarket: [] 
-}
+// const books = {
+//   id: '1',
+//   urlImg: '',
+//   name: '',
+//   category: '',
+//   description: '',
+//   author: '',
+//   urlMarket: [] 
+// }
 
-const a = localStorage.getProducts();
+
+
+// const a = localStorage.getProducts();
 // console.log(a);
 
 
 
 // Для виклику сторінки Category
-import loadBooksCategory from './js/category.js';
-loadBooksCategory('Hardcover Fiction');
+// import loadBooksCategory from './js/category.js';
+// loadBooksCategory('Hardcover Fiction');
