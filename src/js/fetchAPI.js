@@ -30,9 +30,9 @@ const backendAPI = {
     }
   },
 
-  getBookID: async function (id) {
+   getBookDescription: async function (id) {
     try {
-      const response = await axios.get(`${id}`);
+      const response = await axios.get(`/${id}`);
       return response.data;
     } catch (error) {
       console.log(error);
