@@ -20,6 +20,24 @@ const backendAPI = {
       console.log(error);
     }
   },
+
+  getCategory: async function (selected) {
+    try {
+      const response = await axios.get(`/category?category=${selected}`);
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  getBookID: async function (id) {
+    try {
+      const response = await axios.get(`${id}`);
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };
 
 export default backendAPI;
