@@ -7,7 +7,7 @@ import * as shoppingList from './js/shopping-list.js';
 import * as menu from './js/menu.js';
 import * as popUp from './js/pop-up.js';
 
-
+export const pageContainer = document.querySelector('.home-page');
 
 
 
