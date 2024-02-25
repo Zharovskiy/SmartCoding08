@@ -2,15 +2,43 @@ import * as header from './js/header.js';
 import * as categories from './js/categories.js';
 import * as supportUkraine from './js/support-ukraine';
 import * as homePage from './js/homePage.js';
-import * as category from './js/category.js'
+import loadBooksCategory from './js/category.js';
 import * as shoppingList from './js/shopping-list.js';
 import * as menu from './js/menu.js';
 import * as popUp from './js/pop-up.js';
 
 export const pageContainer = document.querySelector('.home-page');
 
+// Виклик по Кнопка лого і Кнопка Номе
+export function firstLoad () {
+    // Видалити все з контейнера homePage
+    // if() {
+// Рендер всіх категорій в сайд барі через перевірку чи секція наявна
+    // } 
+    // Саппорт Україна
+    // Бестселлерс
+}
+
+// Виклик по натисканню на кнопку шоппінг ліст
+export function loadShoppingList () {
+    // Видалити все з контейнера homePage
+    // Рендер Шоппінг ліст
+    // 
+}
+
+// Виклик сторінки категорії книг
+export function loadCategory (category) {
+    // Видалити все з контейнера homePage
+    // if() {
+    // Рендер всіх категорій в сайд барі через перевірку чи секція наявна
+    // }
+}
+
+// Перше завантаження виклик
+firstLoad();
 
 
+loadBooksCategory('Hardcover Fiction');
 
 
 
@@ -33,8 +61,3 @@ export const pageContainer = document.querySelector('.home-page');
 // const a = localStorage.getProducts();
 // console.log(a);
 
-
-
-// Для виклику сторінки Category
-// import loadBooksCategory from './js/category.js';
-// loadBooksCategory('Hardcover Fiction');
