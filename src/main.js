@@ -34,5 +34,5 @@ console.log(a);
 
 
 // Для виклику сторінки Category
-import loadBooksCategory from './js/category.js';
-loadBooksCategory('Hardcover Fiction');
+// import loadBooksCategory from './js/category.js';
+// loadBooksCategory('Hardcover Fiction');
