@@ -19,7 +19,7 @@ const renderBooks = async () => {
             </li>`;        
         }).join('\n');
         
-        categoriesBooksList.insertAdjacentHTML('beforeend', markup);
+        // categoriesBooksList.insertAdjacentHTML('beforeend', markup);
     } catch (error) {
         console.error("Error fetching best sellers:", error);
     }
