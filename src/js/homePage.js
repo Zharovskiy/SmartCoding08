@@ -27,7 +27,7 @@ export const renderBestBooks = async () => {
 
     bestBooksList.insertAdjacentHTML('beforeend', markup);
   } catch (error) {
-    console.error('Error fetching best sellers:', error);
+    console.error('Error fetching Best sellers:', error);
   }
 };
 
