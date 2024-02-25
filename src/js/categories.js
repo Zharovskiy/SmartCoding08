@@ -80,10 +80,6 @@ async function loadCategory(categoryName) {
   }
 }
 
-function renderCategoryPage(data) {
-  // Додайте код для відображення вмісту категорії
-}
-
 function renderAllCategoriesButton() {
   const allCategoriesButton = `<li class="category-item all-category category-active">All categories</li>`;
   categorySelectors.categoryList.insertAdjacentHTML('afterbegin', allCategoriesButton);
