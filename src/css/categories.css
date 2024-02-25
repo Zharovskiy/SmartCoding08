@@ -88,6 +88,31 @@
     line-height: 1.08333;
   }
 
+.category-list::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 12px;
+}
+
+.category-list::-webkit-scrollbar-thumb {
+  color: var(--scrollbar-bg);
+  height: 114px;
+  border-radius: 12px;
+}
+
+
+
+.category-item.active {
+  color: blue;
+  text-transform: uppercase;
+}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .category-container {
+    width: 346px;
+    max-height: 472px;
+  }
+
   .book-category-list {
     display: flex;
     flex-wrap: wrap;

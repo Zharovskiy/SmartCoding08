@@ -1,4 +1,4 @@
-import backendAPI from "./fetchAPI";
+import backendAPI from './fetchAPI';
 
 export function renderTitle(containerClass, title) {
   const container = document.querySelector(containerClass);

@@ -66,16 +66,51 @@ function categoryMarkup(data) {
     .map(
       item =>
         `<li class='sidebar-category-item' data-source="${item.list_name}">${item.list_name}</li>`
-    )
-    .join('');
+    ).join('');
   return result;
+}
+
+async function loadCategory(categoryName) {
+  console.log('Loading category:', categoryName);
+  try {
+    const categoryData = await backendAPI.getCategoryList(categoryName);
+    renderCategoryPage(categoryData);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function renderCategoryPage(data) {
+  // Додайте код для відображення вмісту категорії
+}
+
+function renderAllCategoriesButton() {
+  const allCategoriesButton = `<li class="category-item all-category category-active">All categories</li>`;
+  categorySelectors.categoryList.insertAdjacentHTML('afterbegin', allCategoriesButton);
+  categorySelectors.allCategory = document.querySelector('.all-category');
+  categorySelectors.allCategory.addEventListener('click', () => {
+    loadCategory('all');
+  });
 }
 
 (async () => {
   try {
     const categoryData = await backendAPI.getCategoryList();
     const markup = categoryMarkup(categoryData);
-    categorySelectors.categoryList.insertAdjacentHTML('beforeend', markup);
+    categorySelectors.categoryList.innerHTML = markup;
+
+    renderAllCategoriesButton();
+    
+    categorySelectors.categoryList.addEventListener('click', (event) => {
+  if (event.target.classList.contains('category-item')) {
+    categorySelectors.categoryList.querySelectorAll('.category-item').forEach(item => {
+      item.classList.remove('active');
+    });
+    const categoryName = event.target.dataset.category;
+    loadCategory(categoryName);
+    event.target.classList.add('active');
+  }
+});
   } catch (error) {
     console.log(error);
   }
