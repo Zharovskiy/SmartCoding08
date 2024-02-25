@@ -38,7 +38,7 @@ export function loadCategory (category) {
 firstLoad();
 
 
-loadBooksCategory('Hardcover Fiction');
+// loadBooksCategory('Hardcover Fiction');
 
 
 
