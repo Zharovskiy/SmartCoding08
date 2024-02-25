@@ -43,8 +43,7 @@ export function renderBestBooks(bestBooks) {
                 <button class="bestsellers-btn" type="button data-category="${list_name}">See more</button>
             </li>`;        
         }).join('\n');
-        
-  
+
         bestBooksList.insertAdjacentHTML('beforeend', markup);
 }
 
