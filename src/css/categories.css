@@ -46,12 +46,12 @@
 }
 
 .sidebar-category-container {
-
   margin-bottom: 40px;
+  width: 335px;
 }
 
 .sidebar-category-list {
-  width: 335px;
+
   overflow: auto;
   display: flex;
   flex-direction: column;
@@ -88,32 +88,31 @@
     line-height: 1.08333;
   }
 
-.category-list::-webkit-scrollbar {
-  width: 8px;
-  border-radius: 12px;
-}
+  .category-list::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 12px;
+  }
 
-.category-list::-webkit-scrollbar-thumb {
-  color: var(--scrollbar-bg);
-  height: 114px;
-  border-radius: 12px;
-}
+  .category-list::-webkit-scrollbar-thumb {
+    color: var(--scrollbar-bg);
+    height: 114px;
+    border-radius: 12px;
+  }
 
-
-
-.category-item.active {
-  color: blue;
-  text-transform: uppercase;
-}
+  .category-item.active {
+    color: blue;
+    text-transform: uppercase;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .category-container {
-    width: 346px;
-    max-height: 472px;
+    width: 337px;
+  
   }
 
   .book-category-list {
+    height: 472px;
     display: flex;
     flex-wrap: wrap;
     row-gap: 40px;
@@ -131,27 +130,43 @@
     height: 316px;
   }
 
-    .sidebar-category-container {
-      margin-top: 0;
-      width: 337px;
-      padding: 0;
-    }
-  
-    .sidebar-category-list {
-      width: 337px;
-      gap: 32px;
-      height: 472px;
-    }
-  
-    .sidebar-category-item {
-      width: 309px;
-      font-size: 18px;
-      line-height: 1.3333;
-      letter-spacing: -0.36px;
-    }
+  .sidebar-category-container {
+    margin-top: 0;
+    width: 337px;
+    padding: 0;
+  }
+
+  .sidebar-category-list {
+    width: 337px;
+    gap: 32px;
+    height: 472px;
+  }
+
+  .sidebar-category-item {
+    width: 309px;
+    font-size: 18px;
+    line-height: 1.3333;
+    letter-spacing: -0.36px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
+  .sidebar-category-container {
+    width: 346px;
+    
+  }
+
+  .sidebar-category-list {
+    height: 472px;
+  }
+
+  .sidebar-category-item {
+    width: 328px;
+    font-size: 18px;
+    line-height: 1.3333;
+    letter-spacing: -0.36px;
+  }
+
   .book-category-list {
     display: flex;
     flex-wrap: wrap;
@@ -171,20 +186,4 @@
     width: 180px;
     height: 256px;
   }
-
-     .sidebar-category-container {
-       width: 356px;
-     }
-  
-     .sidebar-category-list {
-       width: 356px;
-     }
-  
-     .sidebar-category-item {
-       width: 328px;
-       font-size: 18px;
-       line-height: 1.3333;
-       letter-spacing: -0.36px;
-     }
 }
-
