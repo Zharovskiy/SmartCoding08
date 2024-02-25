@@ -21,4 +21,3 @@ function theme() {
 
 theme();
 // кнопка перемикача
-
