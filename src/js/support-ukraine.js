@@ -46,33 +46,63 @@ document.addEventListener('DOMContentLoaded', function () {
       img: null,
     },
   ];
+  var fundImages = document.querySelectorAll('.fund-img');
+
+  fundImages.forEach(function (img, index) {
+    img.addEventListener('click', function () {
+      window.open(fundItems[index].url, '_blank');
+    });
+  });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  var fundList = document.getElementById('fundList');
-  var fundItems = fundList.getElementsByClassName('fund-item');
-  var fundBtn = document.querySelector('.fund-btn');
+document.addEventListener("DOMContentLoaded", function() {
+  var fundList = document.getElementById("fundList");
+  var fundItems = fundList.getElementsByClassName("fund-item");
+  var fundBtn = document.querySelector(".fund-btn");
 
+  // Функция для скрытия всех элементов списка
   function hideAllItems() {
     for (var i = 0; i < fundItems.length; i++) {
-      fundItems[i].style.display = 'none';
+      fundItems[i].style.display = "none";
     }
   }
 
+  // Функция для показа первых шести элементов
+  function showFirstSixItems() {
+    for (var i = 0; i < 6; i++) {
+      fundItems[i].style.display = "block";
+    }
+  }
+
+  // Показываем первые шесть элементов при загрузке страницы
   hideAllItems();
-  for (var i = 0; i < 6; i++) {
-    fundItems[i].style.display = 'block';
-  }
+  showFirstSixItems();
 
-  fundBtn.addEventListener('click', function () {
-    for (var i = 0; i < 3; i++) {
-      if (fundItems[i].style.display !== 'none') {
-        fundItems[i].style.display = 'none';
+  // При нажатии на кнопку отображаем следующие шесть элементов, пролистываясь
+  fundBtn.addEventListener("click", function() {
+    var isHidden = fundItems[0].style.display === "none";
+
+    if (isHidden) {
+      // Показываем верхние три элемента
+      for (var i = 0; i < 3; i++) {
+        fundItems[i].style.display = "block";
       }
-    }
-    for (var i = 6; i < 12; i++) {
-      if (fundItems[i]) {
-        fundItems[i].style.display = 'block';
+      // Скрываем следующие шесть элементов
+      for (var i = 6; i < 12; i++) {
+        if (fundItems[i]) {
+          fundItems[i].style.display = "none";
+        }
+      }
+    } else {
+      // Скрываем верхние три элемента
+      for (var i = 0; i < 3; i++) {
+        fundItems[i].style.display = "none";
+      }
+      // Показываем следующие шесть элементов
+      for (var i = 6; i < 12; i++) {
+        if (fundItems[i]) {
+          fundItems[i].style.display = "block";
+        }
       }
     }
   });
