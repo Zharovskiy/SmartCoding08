@@ -14,8 +14,8 @@
     display: flex;
     border-radius: 0 0 8px 8px;
     height: 72px;
-    border: 1.50px solid #111;
-    background: #FFFFFF;
+    border: 1.50px solid var(--text-bestsellers);
+    background: var(--header-bg);
     align-items: center;
 }
 .list-header{
@@ -30,7 +30,7 @@
     font-size: 14px;
     line-height: 129%;
     font-family: var(--font-family);
-    color: var(--black);
+    color: var(--text-bestsellers);
     margin-right: 76px;
 }
 .list-nav{
@@ -53,12 +53,12 @@
 .btn-menu{
     padding: 0;
     margin: 0;
-    background-color: #FFFFFF;
+    background-color: var(--header-bg);
     border: none;
     height: 28px;
 }
 .icon-menu-header{
-    stroke: #111;
+    stroke: var(--text-bestsellers);
     width: 100%;
     height: 100%;
 }

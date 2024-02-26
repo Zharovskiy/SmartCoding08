@@ -1,4 +1,5 @@
 import backendAPI from './fetchAPI';
+import { renderCategoryPage } from './categories';
 
 export function renderTitle(containerClass, title) {
   const container = document.querySelector(containerClass);
@@ -12,40 +13,56 @@ export function renderTitle(containerClass, title) {
   );
 }
 
-export function bookTemplate({ title, author, book_image }) {
-  return `<li class="book-category-item">
-  <div class="book-category-card">
-    <img class="book-category-image" src="${book_image}" alt="Book cover" width="180" />
-    <div class="book-category-text">
+export function bookTemplate({ title, author, book_image, _id }) {
+  return `<li class="book-category-item" data-id="${_id}">
+    <div class = "img-cover">
+      <img class="book-category-image" src="${book_image}" alt="Book cover" width="335"  /> 
+      <p class="overlay-text">quick view</p>
+      </div>
+        <div class="book-category-text">
       <h3 class = "book-title">
       ${title}</h3>
       <p class = "author-name"> ${author}</p>
     </div>
-  </div>
-</li>`;
+ </li>`;
 }
+
+
+// Рендер сторінки
 
 export function renderBestBooks(bestBooks) {
   const bestBooksContainer = document.querySelector('.bestsellers-container');
   bestBooksContainer.innerHTML = '';
   renderTitle('.bestsellers-container', 'Best Sellers Books');
-  bestBooksContainer.insertAdjacentHTML('beforeend', `<ul class="bestsellers-list"></ul>`);
+  bestBooksContainer.insertAdjacentHTML(
+    'beforeend',
+    `<ul class="bestsellers-list"></ul>`
+  );
   const bestBooksList = document.querySelector('.bestsellers-list');
-  
-    const markup = bestBooks.map(({ books, list_name }) => {
-      return `
-            <li class="bestsellers-item">
-             <h2 class="bestsellers-category-title">${list_name}</h2>
-                <ul class="bestsellers-books-list"> 
-                    ${books.map(({ book_image, title, author }) => {return bookTemplate({ book_image, title, author })
-                        }).join('\n')}
-                </ul>
-                <button class="bestsellers-btn" type="button data-category="${list_name}">See more</button>
-            </li>`;        
-        }).join('\n');
 
-        bestBooksList.insertAdjacentHTML('beforeend', markup);
+  const markup = bestBooks
+    .map(({ books, list_name }) => {
+      return `<li class="bestsellers-item">
+              <h2 class="bestsellers-category-title">${list_name}</h2>
+              <ul class="bestsellers-books-list"> 
+                ${books
+                  .map(({ title, author, book_image, _id }) => {
+                    return bookTemplate({ title, author, book_image, _id });
+                  })
+                  .join('\n')}
+              </ul>
+              <button class="bestsellers-btn" type="button" data-category="${list_name}">See more</button>
+            </li>`;
+    })
+    .join('\n');
+
+  bestBooksList.insertAdjacentHTML('beforeend', markup);
+
+  const bestsellersList = document.querySelector('.bestsellers-list');
+  bestsellersList.addEventListener('click', onButtonClick);
 }
+
+// Функція для відображення Best Sellers Books
 
 export async function BestsellersBooks() {
     try {
@@ -56,3 +73,31 @@ export async function BestsellersBooks() {
     }
 }
 BestsellersBooks();
+
+
+// Слухач на кнопку
+
+async function onButtonClick(e) {
+  try{
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  let category = e.target.dataset.category;
+  const allCategoryItem = document.querySelector('.sidebar-category-item');
+  const sidebarCategoryList = document.querySelectorAll(
+    '.sidebar-category-item'
+  );
+
+  sidebarCategoryList.forEach(el => {
+    if (el.dataset.source === category) {
+      allCategoryItem.classList.remove('category-active');
+      el.classList.add('category-active');
+    }
+  });
+
+  const openCategory = await backendAPI.getCategory(category);
+    renderCategoryPage(openCategory, category);
+  } catch(error) {
+    console.log('Error fetching modal:', error); 
+  }
+}
