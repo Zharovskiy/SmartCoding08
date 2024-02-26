@@ -1,4 +1,5 @@
 .fund-block {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -58,7 +59,21 @@
 .fund-img {
   filter: brightness(0) invert(1);
   height: 32px;
+}
 
+.fund-btn {
+  position: absolute; 
+  width: 32px;
+  height: 32px;
+  margin: auto; 
+  bottom: 24px; 
+  border-radius: 50%;
+  cursor: pointer;
+  background: rgb(255, 255, 255);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439px) {
