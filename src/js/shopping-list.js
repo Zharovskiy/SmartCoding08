@@ -11,7 +11,9 @@ function loadShoppingList () {
 
     // Видалення секції категорій в сайдбарі
     const categoryList = document.querySelector('.sidebar-category-container');
-    categoryList.remove();
+    if (categoryList !== null) {
+        categoryList.remove();
+    }
 
     // додати лоадер
     // Видалення слухача категорій книг з сайдбару 
@@ -57,7 +59,7 @@ function renderShoppingList(dataShop) {
 }
 
 function delBookFromStorage (event) {
-    const elemID = event;
+    const elemID = event.carrentTarget;
     console.log(elemID);
     // дістати елемент на який натиснули з id
     // localStorage.putProducts({id: });
