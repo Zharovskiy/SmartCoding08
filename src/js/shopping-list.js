@@ -19,7 +19,13 @@ function loadShoppingList () {
     // Видалення слухача карточок книжок
 
     const dataShop = localStorage.getProducts();
-    renderShoppingList(dataShop);
+    if(dataShop.length !== 0) {
+        renderShoppingList(dataShop);
+    } else {
+        // видалити лоадер
+        // рендер картинки
+    }
+    
 }
 
 function renderShoppingList(dataShop) {
@@ -44,7 +50,10 @@ function renderShoppingList(dataShop) {
     pageContainer.insertAdjacentHTML('afterbegin', markupPageShop);
     
     // додавання слухача для видалення товару
-    pageContainer.addEventListener('click', delBookFromStorage);
+    const cardBookShop = document.querySelectorAll('.category-book-card');
+    cardBookShop.forEach(cardBook => {
+        cardBook.addEventListener('click', delBookFromStorage);
+    });
 }
 
 function delBookFromStorage (event) {
