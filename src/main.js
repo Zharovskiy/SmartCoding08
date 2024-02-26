@@ -14,19 +14,19 @@ import * as popUp from './js/pop-up.js';
 
 
 
-// Для тестування localStorage
-import { LocalStorage } from './js/localStorage.js';
-const localStorage = new LocalStorage();
+// // Для тестування localStorage
+// import { LocalStorage } from './js/localStorage.js';
+// const localStorage = new LocalStorage();
 
-const books = {
-  id: '1',
-  urlImg: '',
-  name: '',
-  category: '',
-  description: '',
-  author: '',
-  urlMarket: [] 
-}
+// const books = {
+//   id: '1',
+//   urlImg: '',
+//   name: '',
+//   category: '',
+//   description: '',
+//   author: '',
+//   urlMarket: []
+// }
 
-const a = localStorage.getProducts();
-console.log(a);
+// const a = localStorage.getProducts();
+// console.log(a);
