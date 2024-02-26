@@ -65,15 +65,14 @@ export function renderBestBooks(bestBooks) {
 // Функція для відображення Best Sellers Books
 
 export async function BestsellersBooks() {
-    try {
-        const bestSellersData = await backendAPI.getBestSellers();
-        return renderBestBooks(bestSellersData);
-    } catch (error) {
-        console.error("Error fetching best sellers:", error);
-    }
+  try {
+    const bestSellersData = await backendAPI.getBestSellers();
+    return renderBestBooks(bestSellersData);
+  } catch (error) {
+    console.error('Error fetching best sellers:', error);
+  }
 }
 BestsellersBooks();
-
 
 // Слухач на кнопку
 
