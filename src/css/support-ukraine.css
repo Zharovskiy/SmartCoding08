@@ -52,20 +52,21 @@
   line-height: 18px;
   letter-spacing: -0.04em;
   display: flex;
-  gap: 27px;
+  gap: 16px;
   align-items: center;
 }
 
 .fund-img {
   filter: brightness(0) invert(1);
   height: 32px;
+  align-items: start;
 }
 
 .fund-btn {
   position: absolute; 
   width: 32px;
   height: 32px;
-  margin: auto; 
+  margin-left: 112px; 
   bottom: 24px; 
   border-radius: 50%;
   cursor: pointer;
@@ -74,6 +75,12 @@
   display: flex;
   justify-content: center;
   align-items: center; 
+  transition: transform 0.3s ease;
+}
+
+
+.fund-btn:active {
+  transform: rotate(180deg); 
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439px) {
