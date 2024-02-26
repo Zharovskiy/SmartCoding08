@@ -2,8 +2,8 @@ import { LocalStorage } from './localStorage.js';
 
 document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById('modal');
-  const closeButton = document.querySelector('.close');
-  const addToCartButton = document.querySelector('.add-to-cart');
+  const closeButton = document.querySelector('.modal-close');
+  const addToCartButton = document.querySelector('.modal-add-to-cart');
   
   const localStorageInstance = new LocalStorage();
   
