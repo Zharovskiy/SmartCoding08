@@ -176,3 +176,9 @@
     float: right;
     background-color: transparent;
 }
+
+.bestsellers-btn:hover,
+.bestsellers-btn:focus {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+}

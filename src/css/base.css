@@ -1,9 +1,12 @@
 :root{
 --main-bg: #F6F6F6;
 --toggl-bg: url(../images/header/switcher_whit.svg);
---text-bestsellers: #111111;
+--text-bestsellers: #111;
 --text-sb: rgba(17, 17, 17, 0.6);
 --scrollbar-bg: #e0e0e0;
+--btn-text:#fff;
+--btn-bg:#4f2ee8;
+--header-bg: #fff;
 }
 
 :root[data-theme ='dark']{
@@ -12,6 +15,9 @@
   --text-bestsellers: #fff;
   --text-sb: rgba(255, 255, 255, 0.6);
   --scrollbar-bg: rgba(17, 17, 17, 0.6);
+  --btn-text: #111;
+  --btn-bg: #eac645;
+  --header-bg: #111;
 }
 
 body {
