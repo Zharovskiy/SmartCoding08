@@ -1,4 +1,5 @@
 .fund-block {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -61,7 +62,7 @@
 }
 
 .fund-btn {
-  position: relative; 
+  position: absolute; 
   width: 32px;
   height: 32px;
   margin: auto; 
