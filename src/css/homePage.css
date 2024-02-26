@@ -1,27 +1,24 @@
-.bestsellers {}
-
 .bestsellers-container {
-    padding-top: 40px;
+    /* padding-top: 40px; */
     padding-bottom: 80px;
 }
 
 @media screen and (min-width: 768px) {
     .bestsellers-container {
-        padding-top: 98px;
+        /* padding-top: 98px; */
         padding-bottom: 100px;
     }
 }
 
 @media screen and (min-width: 1440px) {
     .bestsellers-container {
-        padding-top: 40px;
+        /* padding-top: 0; */
         padding-bottom: 72px;
         max-width: 996px;
     }
 }
 
-.bestsellers-title {
-    /*Olena*/
+.page-title {
     font-weight: 700;
     font-size: 32px;
     line-height: 1.1875;
@@ -30,14 +27,13 @@
     margin-bottom: 40px;
 }
 
-.bestsellers-title-color {
+.page-title-highlight {
     color: #4f2ee8;
 }
 
 @media screen and (min-width: 768px) {
 
-    /*Olena*/
-    .bestsellers-title {
+    .page-title {
         font-size: 48px;
         line-height: 1.08333;
     }
@@ -87,26 +83,26 @@
     }
 }
 
-.bestsellers-books-item {
-    /*Olena book-category-item*/
+.book-category-item {
     width: 335px;
     align-items: center;
 }
 
-.bestsellers-books-list .bestsellers-books-item:nth-child(2),
-.bestsellers-books-list .bestsellers-books-item:nth-child(3),
-.bestsellers-books-list .bestsellers-books-item:nth-child(4),
-.bestsellers-books-list .bestsellers-books-item:nth-child(5) {
+.bestsellers-books-list .book-category-item:nth-child(2),
+.bestsellers-books-list .book-category-item:nth-child(3),
+.bestsellers-books-list .book-category-item:nth-child(4),
+.bestsellers-books-list .book-category-item:nth-child(5) {
     display: none;
 }
 
 @media screen and (min-width: 768px) {
-    .bestsellers-books-item {
+    .book-category-item {
         width: 218px;
+        align-items: center;
     }
 
-    .bestsellers-books-list .bestsellers-books-item:nth-child(2),
-    .bestsellers-books-list .bestsellers-books-item:nth-child(3) {
+    .bestsellers-books-list .book-category-item:nth-child(2),
+    .bestsellers-books-list .book-category-item:nth-child(3) {
         display: block;
     }
 }
@@ -114,49 +110,48 @@
 @media screen and (min-width: 1440px) {
     .book-category-item {
         width: 180px;
-        align-items: center;
     }
 
-    .bestsellers-books-list .bestsellers-books-item:nth-child(4),
-    .bestsellers-books-list .bestsellers-books-item:nth-child(5) {
+    .bestsellers-books-list .book-category-item:nth-child(4),
+    .bestsellers-books-list .book-category-item:nth-child(5) {
         display: block;
     }
 }
 
-.bestsellers-books-img {
+.book-category-image {
     width: 100%;
     height: 485px;
     border-radius: 8px;
 }
 
 @media screen and (min-width: 768px) {
-    .bestsellers-books-img {
+    .book-category-image {
         height: 316px;
     }
 }
 
 @media screen and (min-width: 1440px) {
-    .bestsellers-books-img {
+    .book-category-image {
         height: 256px;
     }
 }
 
-.bestsellers-book-title {
+.book-title {
     font-weight: 700;
     font-size: 16px;
     line-height: 1.125;
     letter-spacing: -0.04em;
     text-transform: uppercase;
-    color:var(--text-bestsellers);
+    color: var(--text-bestsellers);
     margin-top: 14px;
     margin-bottom: 4px;
     overflow: hidden;
     height: 18px;
+    
 }
 
-.bestsellers-book-author {
+.author-name {
     font-style: italic;
-    font-weight: 400;
     font-size: 12px;
     line-height: 1.16667;
     letter-spacing: -0.04em;
@@ -177,7 +172,7 @@
     line-height: 1.28571;
     letter-spacing: -0.01em;
     text-transform: uppercase;
-    color: var(--text-bestsellers);
+    color:var(--text-bestsellers);
     float: right;
     background-color: transparent;
 }

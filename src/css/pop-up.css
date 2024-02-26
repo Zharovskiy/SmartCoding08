@@ -25,7 +25,7 @@
   align-items: stretch;
 }
 
-.close {
+.modal-close {
   position: absolute;
   top: 6px;
   right: calc(6px + 14px);
@@ -39,14 +39,14 @@
   transform: translate(50%, -50%);
 }
 
-.close:hover,
-.close:focus {
+.modal-close:hover,
+.modal-close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
 }
 
-.book-cover {
+.modal-book-cover {
   position: static;
   width: 287px;
   height: 408px;
@@ -60,7 +60,7 @@
     no-repeat center;
 }
 
-.add-to-cart {
+.modal-add-to-cart {
   position: absolute;
   width: 220px;
   height: 46px;
@@ -91,8 +91,8 @@
   margin: 0px 10px;
 }
 
-.add-to-cart:hover,
-.add-to-cart:focus {
+.modal-add-to-cart:hover,
+.modal-add-to-cart:focus {
   border-radius: 40px;
   background: rgb(79, 46, 232);
   color: rgb(255, 255, 255);
@@ -209,7 +209,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
   }
-  .add-to-cart {
+  .modal-add-to-cart {
     position: absolute;
     width: 499px;
     height: 64px;
@@ -229,7 +229,7 @@
     white-space: nowrap;
   }
 
-  .book-cover {
+  .modal-book-cover {
     position: static;
     width: 192px;
     height: 281px;

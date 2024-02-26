@@ -71,12 +71,8 @@ body {
       flex-direction: row;
       gap: 32px;
     }
-
-    .home-page {
-      max-width: 704px;
-    }
   }
-  
+
   @media screen and (min-width: 1440px) {
     .container {
       max-width: 1440px;
@@ -98,9 +94,5 @@ body {
       display: flex;
       flex-grow: 1;
       padding-top: 40px;
-    }
-
-    .home-page {
-      max-width: 996px;
     }
   }
