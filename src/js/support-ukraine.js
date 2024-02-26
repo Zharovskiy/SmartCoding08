@@ -46,27 +46,4 @@ document.addEventListener('DOMContentLoaded', function () {
       img: null,
     },
   ];
-
-  const fundList = document.getElementById('fundList');
-  const loadMoreButton = document.getElementById('loadMore');
-  let currentIndex = 6;
-
-  function addFundItems() {
-    for (
-      let i = currentIndex;
-      i < currentIndex + 3 && i < fundItems.length;
-      i++
-    ) {
-      const listItem = document.createElement('li');
-      listItem.textContent = fundItems[i];
-      fundList.appendChild(listItem);
-    }
-    currentIndex += 3;
-  }
-
-  addFundItems();
-
-  loadMoreButton.addEventListener('click', function () {
-    addFundItems();
-  });
 });
