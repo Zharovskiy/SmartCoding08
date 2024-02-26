@@ -25,7 +25,7 @@ function loadShoppingList () {
         renderShoppingList(dataShop);
     } else {
         // видалити лоадер
-        // рендер картинки
+        pageContainer.insertAdjacentHTML('afterbegin', 'Кошик пустий');
     }
     
 }
