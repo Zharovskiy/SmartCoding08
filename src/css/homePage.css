@@ -5,14 +5,14 @@
 
 @media screen and (min-width: 768px) {
     .bestsellers-container {
-        padding-top: 98px;
+        /* padding-top: 98px; */
         padding-bottom: 100px;
     }
 }
 
 @media screen and (min-width: 1440px) {
     .bestsellers-container {
-        padding-top: 0;
+        /* padding-top: 0; */
         padding-bottom: 72px;
         max-width: 996px;
     }
