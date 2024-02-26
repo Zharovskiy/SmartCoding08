@@ -47,3 +47,33 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   ];
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  var fundList = document.getElementById('fundList');
+  var fundItems = fundList.getElementsByClassName('fund-item');
+  var fundBtn = document.querySelector('.fund-btn');
+
+  function hideAllItems() {
+    for (var i = 0; i < fundItems.length; i++) {
+      fundItems[i].style.display = 'none';
+    }
+  }
+
+  hideAllItems();
+  for (var i = 0; i < 6; i++) {
+    fundItems[i].style.display = 'block';
+  }
+
+  fundBtn.addEventListener('click', function () {
+    for (var i = 0; i < 3; i++) {
+      if (fundItems[i].style.display !== 'none') {
+        fundItems[i].style.display = 'none';
+      }
+    }
+    for (var i = 6; i < 12; i++) {
+      if (fundItems[i]) {
+        fundItems[i].style.display = 'block';
+      }
+    }
+  });
+});
