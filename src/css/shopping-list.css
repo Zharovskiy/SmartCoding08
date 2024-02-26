@@ -102,7 +102,14 @@ ul.book-list li {
 }
 
 @media screen and (min-width: 768px) {
+  .book-cover-img {
+    width: 116px;
+    height: 165px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
+  .container-shopping-list {
+    width: 100%;
+  }
 }
