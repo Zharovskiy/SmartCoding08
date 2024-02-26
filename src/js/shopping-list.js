@@ -62,7 +62,6 @@ function delBookFromStorage (event) {
     // дістати елемент на який натиснули з id
     // localStorage.putProducts({id: });
     // const delBookMarkup = document.getElementById(id);
-
 }
     
 export default { shopBtn };
