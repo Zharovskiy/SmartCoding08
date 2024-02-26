@@ -25,16 +25,21 @@ function loadShoppingList () {
         renderShoppingList(dataShop);
     } else {
         // видалити лоадер
-        pageContainer.insertAdjacentHTML('afterbegin', 'Кошик пустий');
+        const markupPageShop = 
+        `<h2 class="category-page-title">Shopping<span class="category-titel-color"> List</span></h2>
+        <ul class="category-books">
+        ${'This page is empty, add some books and proceed to order.'}
+        </ul>`;
+        pageContainer.insertAdjacentHTML('afterbegin', markupPageShop);
     }
     
 }
 
 function renderShoppingList(dataShop) {
     const markupCard = dataShop.map(({_id, book_image, title, author}) => 
-        `<li class="category-book-card" id="${_id}">
+        `<li class="category-book-card" id='${_id}'>
         <div class="category-box-overlay">
-            <img class="category-book-image" src="${book_image}" alt="Book">
+            <img class="category-book-image" data-id="${_id}" src="${book_image}" alt="Book">
             <p class="category-overlay">Quick view</p>
         </div>
         <div class="category-book-text">
@@ -59,11 +64,10 @@ function renderShoppingList(dataShop) {
 }
 
 function delBookFromStorage (event) {
-    const elemID = event.carrentTarget;
-    console.log(elemID);
-    // дістати елемент на який натиснули з id
-    // localStorage.putProducts({id: });
-    // const delBookMarkup = document.getElementById(id);
+    const elemDelID = event.target.dataset.id;
+    localStorage.putProducts({_id: elemDelID});
+    const delBookMarkup = document.getElementById(elemDelID);
+    delBookMarkup.remove();
 }
     
 export default { shopBtn };
