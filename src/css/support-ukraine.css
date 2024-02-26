@@ -79,7 +79,11 @@
 }
 
 
-.fund-btn:active {
+.fund-btn .arrow-fund {
+  transition: transform 0.3s ease;
+}
+
+.fund-btn:checked .arrow-fund {
   transform: rotate(180deg); 
 }
 
