@@ -1,5 +1,5 @@
 .modal {
-  display: block;
+  display: none;
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -21,9 +21,11 @@
   box-sizing: border-box;
   border: 2px solid rgb(17, 17, 17);
   background-color: rgb(255, 255, 255);
+  flex-direction: column; /* Встановлюємо напрямок розташування елементів у колонку */
+  align-items: stretch;
 }
 
-.close {
+.modal-close {
   position: absolute;
   top: 6px;
   right: calc(6px + 14px);
@@ -37,14 +39,14 @@
   transform: translate(50%, -50%);
 }
 
-.close:hover,
-.close:focus {
+.modal-close:hover,
+.modal-close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
 }
 
-.book-cover {
+.modal-book-cover {
   position: static;
   width: 287px;
   height: 408px;
@@ -58,7 +60,7 @@
     no-repeat center;
 }
 
-.add-to-cart {
+.modal-add-to-cart {
   position: absolute;
   width: 220px;
   height: 46px;
@@ -89,29 +91,125 @@
   margin: 0px 10px;
 }
 
-.add-to-cart:hover,
-.add-to-cart:focus {
+.modal-add-to-cart:hover,
+.modal-add-to-cart:focus {
   border-radius: 40px;
   background: rgb(79, 46, 232);
   color: rgb(255, 255, 255);
 }
 
+.links {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 100px; /* Додайте верхній відступ між блоком .links та іншими елементами */
+  gap: 20px;
+}
+
 .links a {
-  display: block;
+  /* display: block; */
+  margin-right: 10px;
   margin-bottom: 10px;
+}
+
+.title {
+  position: static;
+  width: 128px;
+  height: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 4px 0px;
+}
+
+.author {
+  position: static;
+  width: 79px;
+  height: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 4px 0px;
+  color: rgb(180, 175, 175);
+  font-family: 'DMSans';
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -4%;
+  text-align: left;
+}
+
+.description {
+  position: absolute;
+  width: 287px;
+  height: 70px;
+  left: 24px;
+  right: 24px;
+  top: 516px;
+  bottom: 220px;
+  color: rgb(17, 17, 17);
+  font-family: 'DMSans';
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  text-align: left;
+}
+
+/* Стилізація логотипів торгівельних майданчиків */
+.logo-amazon img {
+  filter: grayscale(100%);
+  position: static;
+  width: 62px;
+  height: 19px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 20px;
+}
+.logo-amazon img:hover {
+  filter: brightness(0) invert(1)
+    drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+}
+
+.logo-apple img {
+  filter: grayscale(100%);
+  position: static;
+  width: 33px;
+  height: 32px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 0px 20px;
+}
+.logo-apple img:hover {
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
 
 /* 768px */
 @media (min-width: 768px) {
   .modal-content {
+    display: flex;
     position: absolute;
+    flex-direction: column;
+    flex-wrap: wrap;
     width: 579px;
     height: 465px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
   }
-  .add-to-cart {
+  .modal-add-to-cart {
     position: absolute;
     width: 499px;
     height: 64px;
@@ -131,7 +229,7 @@
     white-space: nowrap;
   }
 
-  .book-cover {
+  .modal-book-cover {
     position: static;
     width: 192px;
     height: 281px;
@@ -140,6 +238,20 @@
     top: auto;
     bottom: auto;
     margin: 0;
+  }
+
+  .book-details {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-right: 0; /* Скасовуємо відступ */
+    margin-top: 10px; /* Додаємо верхній відступ для розділення */
+  }
+  .title .author .description {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 }
 

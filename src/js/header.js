@@ -1,3 +1,4 @@
+// кнопка перемикача
 function theme() {
     const toggleTheme = document.querySelector('.toggle-theme')
     let el = document.documentElement
@@ -19,3 +20,4 @@ function theme() {
 };
 
 theme();
+// кнопка перемикача

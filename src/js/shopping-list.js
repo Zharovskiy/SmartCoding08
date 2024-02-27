@@ -1,4 +1,4 @@
-// import { LocalStorage } from '../js/localStorage.js';
+import { LocalStorage } from '../js/localStorage.js';
 const localStorage = new LocalStorage();
 
 // Отримуємо збережені книги з localStorage
@@ -37,3 +37,4 @@ function displayBooks() {
 
 // Викликаємо функцію для відображення книг при завантаженні сторінки
 displayBooks();
+
