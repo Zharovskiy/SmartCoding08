@@ -1,4 +1,4 @@
-import{L as p}from"./assets/scroll-up-57c3d5dd.js";const t=new p,s=t.getProducts();function n(){const e=document.getElementById("bookList");if(e.innerHTML="",s.length===0||!t){e.innerHTML=`
+import"./assets/scroll-up-448023b2.js";class l{constructor(){this.keyName="shopping-list"}getProducts(){const e=localStorage.getItem(this.keyName);return e!==null?JSON.parse(e):[]}checkProduct(e){let t=this.getProducts(),r=t.findIndex(n=>n.id==e);const s={hasProd:!1,index:r,arrProd:t};return r!==-1&&(s.hasProd=!0),s}putProducts(e){let{hasProd:t,index:r,arrProd:s}=this.checkProduct(e.id);t!==!0?s.push(e):s.splice(r,1),localStorage.setItem(this.keyName,JSON.stringify(s))}}const c=new l,i=c.getProducts();function p(){const o=document.getElementById("bookList");if(o.innerHTML="",i.length===0||!c){o.innerHTML=`
             <li>
                 <picture>
                     <source srcset="../images/shopping-list/placeholder.webp" type="image/webp">
@@ -7,5 +7,5 @@ import{L as p}from"./assets/scroll-up-57c3d5dd.js";const t=new p,s=t.getProducts
                     <source srcset="../images/shopping-list/placeholder2x.png" type="image/png">
                     <img src="../images/shopping-list/placeholder.png" alt="No Books Added">
                 </picture>
-            </li>`;return}s.forEach(i=>{const o=document.createElement("li");o.textContent=i,e.appendChild(o)})}n();
+            </li>`;return}i.forEach(e=>{const t=document.createElement("li");t.textContent=e,o.appendChild(t)})}p();
 //# sourceMappingURL=commonHelpers.js.map
