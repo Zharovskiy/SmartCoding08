@@ -1,22 +1,30 @@
 <div class="modal" id="modal">
     <div class="modal-content">
-        <span class="modal-close">&times;</span>
+        <button class="modal-close" type="button">
+            <svg class="x-close" width="12" height="12">
+              <use href="../images/sprite.svg#x-close"></use>
+            </svg>
+          </button>
         <div class="modal-card">
-            <img class="modal-book-cover" src="" alt="Book Cover">
+            <img class="modal-book-cover" src="../images/image.jpg" alt="Book Cover">
             <div class="modal-blok-text">
-                <h2 class="modal-book-title"></h2>
-                <p class="modal-author"></p>
-                <p class="modal-description"></p>
+                <p class="modal-book-title">Title</p>
+                <p class="modal-author">author</p>
+                <p class="modal-description">description</p>
                 <div class="modal-links">
-                    <a class="modal-link" href="" target="_blank">
-                        <svg class="modal-icon">
-                            <use href=""></use>
-                        </svg>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                        <picture class="modal-icon">
+                            <source srcset="./images/pop-up/amazon.webp" type="image/webp"/>
+                            <source srcset="./images/pop-up/amazon.png" type="image/png"/>
+                            <img src="./images/pop-up/amazon.png" alt="Amazon"/> 
+                        </picture>
                     </a>
-                    <a class="modal-link" href="" target="_blank">
-                        <svg class="modal-icon">
-                            <use href=""></use>
-                        </svg>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                        <picture class="modal-icon">
+                            <source srcset="./images/pop-up/open-book.webp" type="image/webp"/>
+                            <source srcset="./images/pop-up/open-book.png" type="image/png"/>
+                            <img src="./images/pop-up/open-book.png" alt="Amazon"/> 
+                        </picture>
                     </a>
                 </div>
             </div>

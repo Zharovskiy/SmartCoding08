@@ -7,6 +7,11 @@
 --btn-text:#fff;
 --btn-bg:#4f2ee8;
 --header-bg: #fff;
+--modal-bg-color: #ffffff;
+--border-color: #111111;
+--icon-color: #111111;
+--shadow-modal: drop-shadow(0px 3px 3px rgba(0,0,0,.35));
+--invert-icon: filter brightness(0) invert(1);
 }
 
 :root[data-theme ='dark']{
@@ -18,6 +23,11 @@
   --btn-text: #111;
   --btn-bg: #eac645;
   --header-bg: #111;
+  --modal-bg-color: #202024;
+  --border-color: #ffffff;
+  --icon-color: #ffffff;
+  --shadow-modal: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+  --invert-icon: filter brightness(0) invert(1);
 }
 
 body {
