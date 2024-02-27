@@ -1,26 +1,30 @@
 import { LocalStorage } from './localStorage.js';
 
+  const modal = document.getElementById('modal');
+  const closeButton = document.querySelector('.modal-close');
+  const addToCartButton = document.querySelector('.modal-add-to-cart');
+  const amazonLogo = document.querySelector('.icon-link-amazon');
+  const appleLogo = document.querySelector('.icon-link-apple');
+  const localStorageInstance = new LocalStorage();
+
+  function openModal() {
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden'; // Блокування прокрутки
+  }
+
+  function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    document.documentElement.style.overflow = 'auto'; // Розблакування прокрутки
+  }
+
+  closeButton.addEventListener('click', closeModal);
+
+
+
 // document.addEventListener('DOMContentLoaded', function() {
-//   const modal = document.getElementById('modal');
-//   const closeButton = document.querySelector('.modal-close');
-//   const addToCartButton = document.querySelector('.modal-add-to-cart');
-//   const amazonLogo = document.querySelector('.icon-link-amazon');
-//   const appleLogo = document.querySelector('.icon-link-apple');
-//   const localStorageInstance = new LocalStorage();
 
-//   function openModal() {
-//     modal.style.display = 'block';
-//     document.body.style.overflow = 'hidden';
-//     document.documentElement.style.overflow = 'hidden'; // Блокування прокрутки
-//   }
-
-//   function closeModal() {
-//     modal.style.display = 'none';
-//     document.body.style.overflow = 'auto';
-//     document.documentElement.style.overflow = 'auto'; // Розблакування прокрутки
-//   }
-
-//   closeButton.addEventListener('click', closeModal);
 
 //   modal.addEventListener('click', function(event) {
 //     if (event.target === modal) {
