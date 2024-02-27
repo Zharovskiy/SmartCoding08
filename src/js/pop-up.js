@@ -4,9 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById('modal');
   const closeButton = document.querySelector('.modal-close');
   const addToCartButton = document.querySelector('.modal-add-to-cart');
-  const amazonLogo = document.querySelector('.logo-amazon');
-  const appleLogo = document.querySelector('.logo-apple');
-
+  const amazonLogo = document.querySelector('.icon-link-amazon');
+  const appleLogo = document.querySelector('.icon-link-apple');
   const localStorageInstance = new LocalStorage();
 
   function openModal() {
@@ -48,15 +47,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Функція для оновлення вмісту модального вікна
   function updateModal(book) {
-    const bookCover = modal.querySelector('.book-cover');
-    const bookTitle = modal.querySelector('.book-title');
-    const author = modal.querySelector('.author');
-    const description = modal.querySelector('.description');
-    const links = modal.querySelector('.links');
+    const bookCover = modal.querySelector('.modal-book-cover');
+    const bookTitle = modal.querySelector('.modal-book-title');
+    const author = modal.querySelector('.modal-author');
+    const description = modal.querySelector('.modal-description');
+    const links = modal.querySelector('.modal-links');
 
     bookCover.src = book.coverImageUrl;
     bookTitle.textContent = book.title;
-    author.textContent = 'Author: ' + book.author;
+    author.textContent = '' + book.author;
     description.textContent = book.description;
 
     // Очистити попередні посилання
@@ -91,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const exampleBook = {
     id: 1,
     coverImageUrl: 'https://example.com/book-cover.jpg',
-    title: 'Example Book Title',
+    title: 'Book Title',
     author: 'John Doe',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     links: [

@@ -1,5 +1,5 @@
 .modal {
-  display: none;
+  display: block;
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -21,7 +21,7 @@
   box-sizing: border-box;
   border: 2px solid rgb(17, 17, 17);
   background-color: rgb(255, 255, 255);
-  flex-direction: column; /* Встановлюємо напрямок розташування елементів у колонку */
+  flex-direction: column;
   align-items: stretch;
 }
 
@@ -32,7 +32,6 @@
   width: 14px;
   height: 14px;
   color: #111111;
-  /* float: right; */
   font-size: 42px;
   font-weight: lighter;
   cursor: pointer;
@@ -98,20 +97,18 @@
   color: rgb(255, 255, 255);
 }
 
-.links {
+.modal-links {
   display: flex;
   justify-content: flex-start;
-  margin-top: 100px; /* Додайте верхній відступ між блоком .links та іншими елементами */
-  gap: 20px;
+  margin-top: 100px;
 }
 
-.links a {
-  /* display: block; */
+.modal-links a {
   margin-right: 10px;
   margin-bottom: 10px;
 }
 
-.title {
+.modal-book-title {
   position: static;
   width: 128px;
   height: 18px;
@@ -119,14 +116,15 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 0px;
+  padding-bottom: 25px;
   flex: none;
   order: 0;
   flex-grow: 0;
-  margin: 4px 0px;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.author {
+.modal-author {
   position: static;
   width: 79px;
   height: 14px;
@@ -149,7 +147,7 @@
   text-align: left;
 }
 
-.description {
+.modal-description {
   position: absolute;
   width: 287px;
   height: 70px;
@@ -164,10 +162,11 @@
   line-height: 18px;
   letter-spacing: -0.04em;
   text-align: left;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-/* Стилізація логотипів торгівельних майданчиків */
-.logo-amazon img {
+.icon-link-amazon img {
   filter: grayscale(100%);
   position: static;
   width: 62px;
@@ -177,12 +176,12 @@
   flex-grow: 0;
   margin: 0px 20px;
 }
-.logo-amazon img:hover {
+.icon-link-amazon img:hover {
   filter: brightness(0) invert(1)
     drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
 }
 
-.logo-apple img {
+.icon-link-apple img {
   filter: grayscale(100%);
   position: static;
   width: 33px;
@@ -192,7 +191,7 @@
   flex-grow: 0;
   margin: 0px 20px;
 }
-.logo-apple img:hover {
+.icon-link-apple img:hover {
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
 
@@ -201,8 +200,7 @@
   .modal-content {
     display: flex;
     position: absolute;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-direction: row;
     width: 579px;
     height: 465px;
     left: 50%;
@@ -230,7 +228,7 @@
   }
 
   .modal-book-cover {
-    position: static;
+    position: absolute;
     width: 192px;
     height: 281px;
     left: auto;
@@ -238,20 +236,79 @@
     top: auto;
     bottom: auto;
     margin: 0;
+    flex: 1;
   }
 
-  .book-details {
+  .modal-blok-text {
+    flex: 1;
+  }
+
+  .modal-blok-text {
     display: flex;
     position: absolute;
     flex-direction: column;
-    flex-wrap: wrap;
-    margin-right: 0; /* Скасовуємо відступ */
-    margin-top: 10px; /* Додаємо верхній відступ для розділення */
+    margin-right: 0;
+    margin-top: 10px;
   }
-  .title .author .description {
+  .modal-title {
+    position: static;
+    width: 192px;
+    height: 28px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 8px 0px;
+    color: rgb(17, 17, 17);
+    font-family: 'DMSans';
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.04em;
+    text-align: left;
+  }
+  .modal-author {
+    position: static;
+    width: 92px;
+    height: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 8px 0px;
+    color: rgb(180, 175, 175);
+    font-family: 'DMSans';
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.04;
+    text-align: left;
+  }
+  .modal-description {
+    position: absolute;
+    align-items: flex-end;
+    width: 279px;
+    height: 70px;
+    left: 256px;
+    right: 44px;
+    top: 114px;
+    bottom: 281px;
+    color: rgb(17, 17, 17);
+    font-family: 'DMSans';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -4%;
+    text-align: left;
   }
 }
 
