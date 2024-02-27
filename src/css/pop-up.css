@@ -109,6 +109,7 @@
 }
 
 .modal-book-title {
+  color: #111111;
   position: static;
   width: 128px;
   height: 18px;
@@ -196,7 +197,7 @@
 }
 
 /* 768px */
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .modal-content {
     display: flex;
     position: absolute;
@@ -310,12 +311,12 @@
     letter-spacing: -4%;
     text-align: left;
   }
-}
+} */
 
 /* 1380px */
-@media (min-width: 1380px) {
+/* @media (min-width: 1380px) {
   .modal-content {
     max-width: 800px;
     margin: 5% auto;
   }
-}
+} */
