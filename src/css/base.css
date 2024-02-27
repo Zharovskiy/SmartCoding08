@@ -7,6 +7,9 @@
 --btn-text:#fff;
 --btn-bg:#4f2ee8;
 --header-bg: #fff;
+--modal-bg-color: #ffffff;
+--border-color: #111111;
+--icon-color: #111111;
 }
 
 :root[data-theme ='dark']{
@@ -18,6 +21,9 @@
   --btn-text: #111;
   --btn-bg: #eac645;
   --header-bg: #111;
+  --modal-bg-color: #202024;
+  --border-color: #ffffff;
+  --icon-color: #ffffff;
 }
 
 body {
