@@ -38,10 +38,15 @@
   margin-left: auto;
   width: 24px;
   height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
 }
 
 .x-close {
-  stroke: var(--header-icon-color);
+  stroke: var(--icon-color);
   transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -92,11 +97,13 @@
 
 .modal-icon {
   transition: filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: filter grayscale(100%); */
+  transition: var(--invert-icon);
 }
 
 .modal-icon:hover,
 .modal-icon:focus {
-  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+  filter: var(--shadow-modal);
 }
 
 .modal-add-to-cart {
@@ -105,6 +112,8 @@
   text-transform: uppercase;
   text-align: center;
   color: var(--text-bestsellers);
+  border: none;
+  background-color: transparent;
 
   display: block;
   padding: 14px 28px;
