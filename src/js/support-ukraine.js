@@ -60,45 +60,37 @@ document.addEventListener('DOMContentLoaded', function () {
   var fundItems = fundList.getElementsByClassName('fund-item');
   var fundBtn = document.querySelector('.fund-btn');
 
-  // Функция для скрытия всех элементов списка
   function hideAllItems() {
     for (var i = 0; i < fundItems.length; i++) {
       fundItems[i].style.display = 'none';
     }
   }
 
-  // Функция для показа первых шести элементов
   function showFirstSixItems() {
     for (var i = 0; i < 6; i++) {
       fundItems[i].style.display = 'block';
     }
   }
 
-  // Показываем первые шесть элементов при загрузке страницы
   hideAllItems();
   showFirstSixItems();
 
-  // При нажатии на кнопку отображаем следующие шесть элементов, пролистываясь
   fundBtn.addEventListener('click', function () {
     var isHidden = fundItems[0].style.display === 'none';
 
     if (isHidden) {
-      // Показываем верхние три элемента
       for (var i = 0; i < 3; i++) {
         fundItems[i].style.display = 'block';
       }
-      // Скрываем следующие шесть элементов
       for (var i = 6; i < 12; i++) {
         if (fundItems[i]) {
           fundItems[i].style.display = 'none';
         }
       }
     } else {
-      // Скрываем верхние три элемента
       for (var i = 0; i < 3; i++) {
         fundItems[i].style.display = 'none';
       }
-      // Показываем следующие шесть элементов
       for (var i = 6; i < 12; i++) {
         if (fundItems[i]) {
           fundItems[i].style.display = 'block';
@@ -106,4 +98,9 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
+  
+  document.getElementById('myButton').addEventListener('click', function () {
+    this.classList.toggle('flipped');
+  });
+  
 });
