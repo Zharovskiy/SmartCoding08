@@ -38,13 +38,15 @@
   .menu-close {
     border: none;
     background: none;
+    padding: 0;
+    height: 28px;
   }
   .xx-close {
-    fill: black;
+    stroke: black;
   }
   .mobile-buttons-icons {
     display: flex;
-    gap: 24px;
+    gap: 14px;
     align-items: center;
   }
 
