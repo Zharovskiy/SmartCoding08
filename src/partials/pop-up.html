@@ -1,11 +1,34 @@
 <div class="modal" id="modal">
     <div class="modal-content">
-        <span class="close">&times;</span>
-        <img class="book-cover" src="" alt="Book Cover">
-        <h2 class="book-title"></h2>
-        <p class="author"></p>
-        <p class="description"></p>
-        <div class="links"></div>
-        <button class="add-to-cart">Add to Shopping List</button>
+        <button class="modal-close" type="button">
+            <svg class="x-close" width="12" height="12">
+              <use href="./images/sprite.svg#x-close"></use>
+            </svg>
+          </button>
+        <div class="modal-card">
+            <img class="modal-book-cover" src="./images/image.jpg" alt="Book Cover">
+            <div class="modal-blok-text">
+                <p class="modal-book-title">Title</p>
+                <p class="modal-author">author</p>
+                <p class="modal-description">description</p>
+                <div class="modal-links">
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                        <picture class="modal-icon">
+                            <source srcset="./images/pop-up/amazon.webp" type="image/webp"/>
+                            <source srcset="./images/pop-up/amazon.png" type="image/png"/>
+                            <img src="./images/pop-up/amazon.png" alt="Amazon"/> 
+                        </picture>
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                        <picture class="modal-icon">
+                            <source srcset="./images/pop-up/open-book.webp" type="image/webp"/>
+                            <source srcset="./images/pop-up/open-book.png" type="image/png"/>
+                            <img src="./images/pop-up/open-book.png" alt="Amazon"/> 
+                        </picture>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <button class="modal-add-to-cart">Add to Shopping List</button>
     </div>
 </div>

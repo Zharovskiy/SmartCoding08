@@ -1,152 +1,183 @@
 .modal {
-  display: block;
   position: fixed;
-  z-index: 1000;
-  left: 0;
+  left: 0px;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
   background-color: rgba(17, 17, 17, 0.4);
 }
 
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  display: none;
+}
+
 .modal-content {
-  margin: 15% auto;
-  padding: 20px;
-  width: 335px;
-  height: 762px;
-  max-width: 600px;
-  position: relative;
-  border-radius: 18px;
-  box-sizing: border-box;
-  border: 2px solid rgb(17, 17, 17);
-  background-color: rgb(255, 255, 255);
-}
-
-.close {
   position: absolute;
-  top: 6px;
-  right: calc(6px + 14px);
-  width: 14px;
-  height: 14px;
-  color: #111111;
-  /* float: right; */
-  font-size: 42px;
-  font-weight: lighter;
-  cursor: pointer;
-  transform: translate(50%, -50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  max-width: 287px;
+  width: 100%;
+  min-height: 682px;
+  padding: 40px 24px;
+
+  background-color: var(--modal-bg-color);
+  border: 2px solid var(--border-color);
+  border-radius: 18px;
 }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+.modal-close {
+  padding: 0;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
 }
 
-.book-cover {
-  position: static;
+.x-close {
+  stroke: var(--icon-color);
+  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.x-close:hover,
+.x-close:focus {
+  stroke: #4f2ee8;
+}
+
+.modal-book-cover {
   width: 287px;
   height: 408px;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin: 14px 0px;
+  object-fit: cover;
   border-radius: 8px;
-  background-color: #777;
-  background: url(https://inbenefit.com/wp-content/uploads/2017/07/%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0-%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D1%8F%D1%89%D0%B8%D1%85-%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA-%D0%BD%D0%B0-wordpress-01.jpeg)
-    no-repeat center;
+  margin-bottom: 14px;
 }
 
-.add-to-cart {
-  position: absolute;
-  width: 220px;
-  height: 46px;
-  left: 62px;
-  top: 676px;
+.modal-book-title {
+  font-size: 16px;
+  letter-spacing: -0.04em;
+  color: var(--text-bestsellers);
+  margin-bottom: 4px;
+}
+
+.modal-author {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: -0.04em;
+  color: #b4afaf;
+  margin-bottom: 18px;
+}
+
+.modal-description {
+  font-weight: 400;
+  line-height: 1.28;
+  letter-spacing: -0.04em;
+  color: var(--text-bestsellers);
+  margin-bottom: 14px;
+}
+
+.modal-links {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 14px 28px 14px 28px;
-  box-sizing: border-box;
-  border: 2px solid rgb(79, 46, 232);
-  border-radius: 40px;
-  color: rgb(17, 17, 17);
-  font-family: 'DM Sans', serif;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 18px;
-  letter-spacing: -1%;
-  text-align: left;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.modal-icon {
+  transition: filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(100%);
+  transition: var(--invert-icon);
+}
+
+.modal-icon:hover,
+.modal-icon:focus {
+  filter: var(--shadow-modal);
+}
+
+.modal-add-to-cart {
+  line-height: 1.28;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
-  background-color: rgb(255, 255, 255);
-  left: 50%;
-  transform: translateX(-50%);
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin: 0px 10px;
-}
+  text-align: center;
+  color: var(--text-bestsellers);
+  border: none;
+  background-color: transparent;
 
-.add-to-cart:hover,
-.add-to-cart:focus {
-  border-radius: 40px;
-  background: rgb(79, 46, 232);
-  color: rgb(255, 255, 255);
-}
-
-.links a {
   display: block;
-  margin-bottom: 10px;
+  padding: 14px 28px;
+  margin: 0 auto 8px;
+  border: 2px solid #4f2ee8;
+  border-radius: 40px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 768px */
-@media (min-width: 768px) {
+.modal-add-to-cart:hover,
+.modal-add-to-cart:focus {
+  background-color: #4f2ee8;
+}
+
+@media screen and (min-width: 768px) {
   .modal-content {
-    position: absolute;
-    width: 579px;
-    height: 465px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .add-to-cart {
-    position: absolute;
-    width: 499px;
-    height: 64px;
-    left: 50%;
-    top: 361px;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 173px 20px 173px;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 0px 10px;
-    font-size: 18px;
-    white-space: nowrap;
+    max-width: 500px;
+    min-height: 385px;
+    padding: 40px;
   }
 
-  .book-cover {
-    position: static;
+  .modal-close {
+    top: 24px;
+    right: 24px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .x-close {
+    width: 14px;
+    height: 14px;
+  }
+
+  .modal-card {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .modal-book-cover {
     width: 192px;
     height: 281px;
-    left: auto;
-    right: auto;
-    top: auto;
-    bottom: auto;
-    margin: 0;
+    margin-bottom: 0;
   }
-}
 
-/* 1380px */
-@media (min-width: 1380px) {
-  .modal-content {
-    max-width: 800px;
-    margin: 5% auto;
+  .modal-book-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .modal-author {
+    font-size: 14px;
+    line-height: 1.28;
+    margin-bottom: 20px;
+  }
+
+  .modal-description {
+    margin-bottom: 20px;
+  }
+
+  .modal-add-to-cart {
+    font-size: 18px;
+    line-height: 1.33;
+    width: 100%;
+    padding: 20px;
   }
 }
