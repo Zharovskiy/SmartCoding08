@@ -1,10 +1,11 @@
+
 .scroll-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 40px;
-    height: 40px;
-    border: none;
+    width: 54px;
+    height: 54px;
+    border: 6px solid lightgrey;
     border-radius: 50%;
     background-color: blue;
     color: white;
@@ -12,8 +13,17 @@
     cursor: pointer;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .scroll-button.show {
     opacity: 1;
 }
+
+.scroll-button svg {
+    width: 80%;
+    height: auto;
+    fill: white;
+ } 
