@@ -21,3 +21,11 @@ function theme() {
 
 theme();
 // кнопка перемикача
+
+// мобільне меню
+const burgerBtn = document.querySelector('.btn-menu');
+const mobMenu = document.getElementById('mobile-menu');
+burgerBtn.addEventListener('click', () => {
+    mobMenu.classList.toggle("is-hidden");
+})
+// мобільне меню
