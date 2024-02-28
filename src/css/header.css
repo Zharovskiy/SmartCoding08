@@ -93,7 +93,8 @@
         border-radius: 36px;
     }
         
-    .item-list-nav:hover{
+    .item-list-nav:hover,
+    .item-list-nav:active{
         padding: 8px 16px;
         border-radius: 36px;
         background-color: #EAC645;
@@ -122,7 +123,8 @@
         padding: 8px 16px;
         border-radius: 36px;
     }
-    .item-list-nav:hover{
+    .item-list-nav:hover,
+    .item-list-nav:active{
         padding: 8px 16px;
         border-radius: 36px;
         background-color: #EAC645;

@@ -77,7 +77,7 @@
 }
 
 .category-active {
-  color: #4f2ee8;
+  color:var(--category-active);
   font-weight: 700;
   text-transform: uppercase;
 }
