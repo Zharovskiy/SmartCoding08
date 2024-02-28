@@ -3,4 +3,4 @@
         <use href="/src/images/scroll-up/Vector-scroll.svg#icon-Vector-scroll"></use>
     </svg>
     `,document.body.appendChild(o);function n(){window.scrollTo({top:0,behavior:"smooth"})}o.addEventListener("click",n),window.addEventListener("scroll",function(){window.scrollY>100?o.classList.add("show"):o.classList.remove("show")})});
-//# sourceMappingURL=scroll-up-07a3e4c6.js.map
+//# sourceMappingURL=scroll-up-c9b80824.js.map
