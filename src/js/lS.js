@@ -2,30 +2,22 @@ import { pageContainer } from "../main";
 import { LocalStorage } from './localStorage.js';
 const localStorage = new LocalStorage();
 
-// прослуховування кнопки shopping List в хедері
 const shopBtn = document.getElementById('shopping-link');
 shopBtn.addEventListener('click', loadShoppingList);
 
 function loadShoppingList () {
     pageContainer.innerHTML = '';
 
-    // Видалення секції категорій в сайдбарі
-    // Або зробити це класами
     const categoryList = document.querySelector('.sidebar-category-container');
     if (categoryList !== null) {
         categoryList.remove();
     }
 
-    // додати лоадер
-    // Видалення слухача категорій книг з сайдбару 
-
-    // Видалення слухача карточок книжок
 
     const dataShop = localStorage.getProducts();
     if(dataShop.length !== 0) {
         renderShoppingList(dataShop);
     } else {
-        // видалити лоадер
         const markupPageShop = 
         `<h2 class="category-page-title">Shopping<span class="category-titel-color"> List</span></h2>
         <ul class="category-books">
@@ -36,6 +28,7 @@ function loadShoppingList () {
     
 }
 
+// Розмітку підставити потрібну
 function renderShoppingList(dataShop) {
     const markupCard = dataShop.map(({_id, book_image, title, author}) => 
         `<li class="category-book-card" id='${_id}'>
@@ -54,10 +47,9 @@ function renderShoppingList(dataShop) {
         <ul class="category-books">
         ${markupCard}
         </ul>`;
-    // видалити лоадер
+
     pageContainer.insertAdjacentHTML('afterbegin', markupPageShop);
     
-    // додавання слухача для видалення товару
     const cardBookShop = document.querySelectorAll('.category-book-card');
     cardBookShop.forEach(cardBook => {
         cardBook.addEventListener('click', delBookFromStorage);
