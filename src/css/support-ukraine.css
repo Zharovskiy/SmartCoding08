@@ -5,6 +5,7 @@
   gap: 40px;
   padding: 24px 40px;
   width: 335px;
+  height: 460px;
   border-radius: 16px;
   box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
   background: radial-gradient(
@@ -41,7 +42,6 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  height: 460px;
 }
 
 .fund-item {
@@ -77,6 +77,9 @@
   align-items: center;
   transition: transform 0.3s ease;
 }
+.hidden {
+  display: none !important; /* Використовуйте !important, якщо потрібно перебити інші стилі */
+}
 
 #myButton.normal {
   transform: rotate(0deg);
@@ -89,9 +92,6 @@
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .fund-block {
     width: 335px;
-  }
-
-  .funds-list {
     height: 474px;
   }
 }
@@ -99,9 +99,6 @@
 @media screen and (min-width: 1440px) {
   .fund-block {
     width: 356px;
-  }
-
-  .funds-list {
     height: 474px;
   }
 }
