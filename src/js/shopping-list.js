@@ -31,11 +31,15 @@ const shopContainer = async () => {
     deleteCardItem.forEach(btn => {
       btn.addEventListener('click', e => {
         if (e.target.nodeName === 'BUTTON' || e.target.nodeName === 'svg' || e.target.nodeName === 'use') { 
-            console.log(e);
             const elemDelID = e.target.dataset.id;
             const obj = {_id: elemDelID};
-            localStorage.putProducts(obj);
+
+             
+            console.log(elemDelID);
+
+            storageData.putProducts(obj);
             const delBookMarkup = document.getElementById(elemDelID);
+            
             delBookMarkup.remove();
             return;
         } else {
@@ -92,7 +96,7 @@ function getShoppingCartMarkup (bookColection) {
                         </div>
                     </div>
                 </li>`;
-            })
+            }) // map end
       .join('');
     return markup;
   }
