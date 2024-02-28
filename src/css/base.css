@@ -1,6 +1,7 @@
 :root{
 --main-bg: #F6F6F6;
 --toggl-bg: url(../images/header/switcher_whit.svg);
+--icon-shopping: url(../images/header/icon-shopping_wight.svg);
 --text-bestsellers: #111;
 --text-sb: rgba(17, 17, 17, 0.6);
 --scrollbar-bg: #e0e0e0;
@@ -23,6 +24,7 @@
 :root[data-theme ='dark']{
   --main-bg: #202024;
   --toggl-bg: url(../images/header/switcher_dark.svg);
+  --icon-shopping: url(../images/header/icon-shopping_dark.svg);
   --text-bestsellers: #fff;
   --text-sb: rgba(255, 255, 255, 0.6);
   --scrollbar-bg: rgba(17, 17, 17, 0.6);
