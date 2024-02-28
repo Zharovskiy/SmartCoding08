@@ -1,6 +1,7 @@
 :root{
 --main-bg: #F6F6F6;
 --toggl-bg: url(../images/header/switcher_whit.svg);
+--icon-shopping: url(../images/header/icon-shopping_wight.svg);
 --text-bestsellers: #111;
 --text-sb: rgba(17, 17, 17, 0.6);
 --scrollbar-bg: #e0e0e0;
@@ -12,11 +13,18 @@
 --icon-color: #111111;
 --shadow-modal: drop-shadow(0px 3px 3px rgba(0,0,0,.35));
 --invert-icon: filter brightness(0) invert(1);
+--bg-color: #ffffff;
+--grey-text-color: #b4afaf;
+--transition-duration: 250ms;
+--timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+--shopping-list-text-color: rgba(0, 0, 0, 0.6);
+--blue-color: #4f2ee8;
 }
 
 :root[data-theme ='dark']{
   --main-bg: #202024;
   --toggl-bg: url(../images/header/switcher_dark.svg);
+  --icon-shopping: url(../images/header/icon-shopping_dark.svg);
   --text-bestsellers: #fff;
   --text-sb: rgba(255, 255, 255, 0.6);
   --scrollbar-bg: rgba(17, 17, 17, 0.6);
@@ -28,6 +36,8 @@
   --icon-color: #ffffff;
   --shadow-modal: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
   --invert-icon: filter brightness(0) invert(1);
+  --bg-color: #111111;
+  --shopping-list-text-color: rgba(255, 255, 255, 0.6);
 }
 
 body {
@@ -87,6 +97,12 @@ body {
       flex-direction: row;
       gap: 32px;
     }
+    .list-nav{
+      display: flex;
+      align-items: center;
+      gap: 24px;
+     
+  }
   }
 
   @media screen and (min-width: 1440px) {
@@ -111,4 +127,9 @@ body {
       flex-grow: 1;
       padding-top: 40px;
     }
+    .list-nav{
+      display: flex;
+      align-items: center;
+      gap: 24px;
+  }
   }

@@ -46,61 +46,48 @@ document.addEventListener('DOMContentLoaded', function () {
       img: null,
     },
   ];
-  var fundImages = document.querySelectorAll('.fund-img');
+
+  const fundImages = document.querySelectorAll('.fund-img');
+  const fundList = document.getElementById('fundList');
+  const fundItemsElements = fundList.getElementsByClassName('fund-item');
+  const fundBtn = document.querySelector('.fund-btn');
+  let visibleIndex = 0;
+
+  function hideAllItems() {
+    for (const item of fundItemsElements) {
+      item.classList.add('hidden');
+    }
+  }
+
+  function showItems(start, end) {
+    for (let i = start; i < end; i++) {
+      fundItemsElements[i]?.classList.remove('hidden');
+    }
+  }
+
+  hideAllItems();
+  showItems(0, 6);
+
+  fundBtn.addEventListener('click', function () {
+    const endIndex = visibleIndex + 6;
+    if (endIndex < fundItemsElements.length) {
+      hideAllItems();
+      showItems(visibleIndex + 3, endIndex + 3);
+      visibleIndex += 3;
+    } else {
+      hideAllItems();
+      showItems(0, 6);
+      visibleIndex = 0;
+    }
+  });
+
+  document.getElementById('myButton').addEventListener('click', function () {
+    this.classList.toggle('flipped');
+  });
 
   fundImages.forEach(function (img, index) {
     img.addEventListener('click', function () {
       window.open(fundItems[index].url, '_blank');
     });
   });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  var fundList = document.getElementById('fundList');
-  var fundItems = fundList.getElementsByClassName('fund-item');
-  var fundBtn = document.querySelector('.fund-btn');
-
-  function hideAllItems() {
-    for (var i = 0; i < fundItems.length; i++) {
-      fundItems[i].style.display = 'none';
-    }
-  }
-
-  function showFirstSixItems() {
-    for (var i = 0; i < 6; i++) {
-      fundItems[i].style.display = 'block';
-    }
-  }
-
-  hideAllItems();
-  showFirstSixItems();
-
-  fundBtn.addEventListener('click', function () {
-    var isHidden = fundItems[0].style.display === 'none';
-
-    if (isHidden) {
-      for (var i = 0; i < 3; i++) {
-        fundItems[i].style.display = 'block';
-      }
-      for (var i = 6; i < 12; i++) {
-        if (fundItems[i]) {
-          fundItems[i].style.display = 'none';
-        }
-      }
-    } else {
-      for (var i = 0; i < 3; i++) {
-        fundItems[i].style.display = 'none';
-      }
-      for (var i = 6; i < 12; i++) {
-        if (fundItems[i]) {
-          fundItems[i].style.display = 'block';
-        }
-      }
-    }
-  });
-  
-  document.getElementById('myButton').addEventListener('click', function () {
-    this.classList.toggle('flipped');
-  });
-  
 });

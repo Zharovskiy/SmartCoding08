@@ -63,19 +63,22 @@
 }
 
 .fund-btn {
-  position: absolute; 
+  position: absolute;
   width: 32px;
   height: 32px;
-  margin-left: 112px; 
-  bottom: 24px; 
+  margin-left: 112px;
+  bottom: 24px;
   border-radius: 50%;
   cursor: pointer;
   background: rgb(255, 255, 255);
   border: none;
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   transition: transform 0.3s ease;
+}
+.hidden {
+  display: none !important; /* Використовуйте !important, якщо потрібно перебити інші стилі */
 }
 
 #myButton.normal {

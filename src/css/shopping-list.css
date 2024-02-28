@@ -1,121 +1,211 @@
-ul.book-list {
-  list-style: none;
-  padding: 0;
-}
-
-ul.book-list li {
-  margin-bottom: 5px;
-}
-
-.shop-page-title {
-  font-size: 32px;
+/* Cart */
+.shop-title {
+  color: var(--text-bestsellers);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: -0.04em;
   margin-bottom: 40px;
 }
 
-.page-accent {
+.shop-title-decor {
   color: rgb(79, 46, 232);
 }
 
-.book-list-order {
-  position: relative;
-}
-
-.book-card {
-  display: flex;
-  align-items: center;
+.shop-cart-container {
   border: 2px solid rgba(79, 46, 232, 0.4);
+  background-color: var(--bg-color);
   border-radius: 16px;
   padding: 14px;
-  background: white;
-  margin-bottom: 20px;
+  list-style: none;
 }
 
-.book-cover-img {
-  width: 100px;
-  height: 142px;
-  border-radius: 8px;
-  margin-right: 14px;
-}
-
-.book-info {
+.shop-cart-list {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  font-size: 14px;
+  gap: 20px;
 }
 
-.book-name-title {
+.shop-cart-wrap {
+  display: flex;
+  gap: 14px;
+  position: relative;
+  
+}
+
+.shop-image-wrapper {
+  overflow: hidden;
+  max-width: 100px;
+  max-height: 142px;
+}
+
+.shop-image {
+  border-radius: 8px;
+}
+
+.shop-cart-info {
+  flex-grow: 1;
+}
+
+.shop-cart-title {
   font-size: 16px;
+  line-height: calc(18 / 16);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--text-bestsellers);
+
   margin-bottom: 4px;
 }
 
-.book-name-category {
-  color: rgb(180, 175, 175);
+.shop-cart-category {
+  letter-spacing: 0.03em;
+  color: var(--grey-text-color);
   font-size: 12px;
   font-weight: 400;
-  line-height: 1.17;
-  letter-spacing: 0.03em;
-  text-align: left;
+  line-height: calc(14 / 12);
   margin-bottom: 8px;
 }
 
-.book-short-description {
-  height: 68px;
-  margin-bottom: 10px;
+.shop-cart-description {
+  font-style: 14px;
+  line-height: calc(18 / 14);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  min-height: 68px;
+  color: var(--text-bestsellers);
+  margin-bottom: 14px;
 }
 
-.book-author-link {
+.shop-cart-bottom-wrap {
   display: flex;
+  justify-content: space-between;
 }
 
-.author-full-name {
-  color: rgb(180, 175, 175);
-  font-style: italic;
+.shop-cart-author {
   font-size: 12px;
   font-weight: 400;
-  line-height: 1.17;
+  line-height: calc(14 / 12);
   letter-spacing: -0.04em;
-  text-align: left;
-  margin-right: auto;
+  color: var(--grey-text-color);
 }
 
-.link {
-  display: inline-flex;
-  align-items: flex-end;
-  margin-left: 8px;
+.shop-cart-media {
+  display: flex;
+  gap: 8px;
+  max-width: 80px;
 }
 
-.remove-book {
+.amazon-icon {
+  padding-top: 3px;
+}
+
+.media-icon {
+  transition-property: transform, opacity;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--timing-function);
+}
+.media-icon:hover {
+  transform: translateY(-2px) scale(1.1);
+  mix-blend-mode: luminosity;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+}
+
+.shop-cart-btn {
   position: absolute;
-  right: auto;
-  top: 14px;
-  background: rgb(79, 46, 232);
-  border: none;
-  cursor: pointer;
-  align-self: flex-end;
-  border-radius: 50%;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 28px;
   height: 28px;
+
+  background-color: var(--blue-color);
+  border-radius: 50%;
 }
 
-.del-icon {
+.shop-cart-btn-trash {
+  fill: transparent;
+  stroke: white;
   width: 16px;
-  height: auto;
+  height: 16px;
 }
 
-@media screen and (min-width: 768px) {
-  .book-cover-img {
-    width: 116px;
-    height: 165px;
-  }
-
-  .shop-page-title {
-    font-size: 48px;
-  }
+.shop-cart-btn {
+  border: none;
+  transition-property: transform;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--timing-function);
 }
 
-@media screen and (min-width: 1440px) {
-  .container-shopping-list {
-    width: 100%;
+.shop-cart-btn:hover {
+  /* transform: scale(1.1); */
+  mix-blend-mode: luminosity;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+}
+
+.shopping-list-text {
+  margin: 0 auto;
+  max-width: 244px;
+
+  margin-top: 120px;
+  margin-bottom: 14px;
+  text-align: center;
+
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: calc(18 / 14);
+
+  color: var(--shopping-list-text-color);
+}
+
+.shopping-list-image {
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .shop-cart-container {
+    padding: 24px;
+  }
+
+  .shop-cart-wrap {
+    gap: 24px;
+  }
+
+  .shop-image-wrapper {
+    max-width: 116px;
+    max-height: 165px;
+  }
+
+  .shop-cart-description {
+    margin-bottom: 48px;
+    min-height: 53px;
+  }
+
+  .shop-cart-media {
+    max-width: 140px;
+    gap: 16px;
+  }
+
+  .shop-cart-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .shop-cart-btn-trash {
+    width: 18px;
+    height: 18px;
+  }
+
+  .shopping-list-text {
+    max-width: 349px;
+
+    margin-top: 140px;
+    margin-bottom: 20px;
+
+    font-size: 18px;
+    line-height: calc(24 / 18);
   }
 }
