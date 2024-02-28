@@ -8,7 +8,6 @@
     border: 6px solid lightgrey;
     border-radius: 50%;
     background-color: blue;
-    color: white;
     font-size: 24px;
     cursor: pointer;
     opacity: 0;
@@ -23,7 +22,8 @@
 }
 
 .scroll-button svg {
-    width: 80%;
-    height: auto;
-    fill: white;
+    position: absolute;
+        top: 30%;
+        left: 28%;
+  fill: white;
  } 
