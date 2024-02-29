@@ -17,12 +17,15 @@ let bookApi = {};
 
 function addListener() {
   const bookContainer = document.querySelectorAll('.book-category-item');
+  console.log(bookContainer)
   bookContainer.forEach(book =>
-    book.addEventListener('click', onOpenModalWindow)
+    book.addEventListener('click', () => {
+      console.log('click')
+    })
   );
 }
-
-addListener();
+// onOpenModalWindow
+// addListener();
 
 async function onOpenModalWindow(event) {
   document.body.style.overflow = 'is-hidden';
