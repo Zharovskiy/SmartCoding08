@@ -2,10 +2,8 @@ import amazon from '../images/pop-up/amazon.webp';
 import amazonpng from '../images/pop-up/amazon.png';
 import apple from '../images/pop-up/books.webp';
 import applepng from '../images/pop-up/books.png';
-import { LocalStorage } from './localStorage.js';
 import backendAPI from './fetchAPI';
 
-const localStor = new LocalStorage();
 const backdrop = document.querySelector('.modal');
 const closeBtn = document.querySelector('.modal-close');
 const modalShoppingBtn = document.querySelector('.modal-add-to-cart');
@@ -53,13 +51,13 @@ async function onOpenModalWindow(event) {
 }
 
 async function createShoppingBtn(data) {
-  const storage = await localStorage.load('shopping-list');
+  const storage = await load('bookList');
   if (!storage || storage.length === 0) {
     addBtn();
     return;
   }
 
-  const addedBook = storage.find(book => book.id === data.id);
+  const addedBook = storage.find(book => book._id === data.id);
 
   if (addedBook) {
     removeBtn();
@@ -67,6 +65,28 @@ async function createShoppingBtn(data) {
     addBtn();
   }
 }
+
+function onUpdateShopList() {
+  const storage = load('bookList');
+  // const id = document.querySelector('.modal-book-name').textContent;
+  if (modalShoppingBtn.textContent === 'add to shopping list') {
+    addBookToStorage(bookApi);
+    removeBtn();
+  } else {
+    storage.forEach((book, ind, arr) => {
+      if (book._id === id) {
+        return arr.splice(ind, 1);
+      }
+    });
+
+    save('bookList', storage);
+    if (storage.length === 0) {
+      remove('bookList');
+    }
+    addBtn();
+  }
+}
+
 
 function addBtn() {
   modalShoppingBtn.textContent = 'add to shopping list';
@@ -125,26 +145,57 @@ function onCloseModalWindow() {
   closeBtn.removeEventListener('click', onCloseModalWindow);
 }
 
-
-function onUpdateShopList() {
-  const storage = localStorage.load('shopping-list');
-  const id = document.querySelector('.book-category-item').dataset.id;
-  if (modalShoppingBtn.textContent === 'add to shopping list') {
-    localStorage.addBookToStorage(bookApi);
-    removeBtn();
-    countBook();
-  } else {
-    storage.forEach((book, ind, arr) => {
-      if (book.id === id) {
-        return arr.splice(ind, 1);
-      }
-    });
-
-    localStorage.save('shopping-list', storage);
-    if (storage.length === 0) {
-      localStorage.remove('shopping-list');
-    }
-    countBook();
-    addBtn();
+const addBookToStorage = book => {
+  const bookStorage = load('bookList') || [];
+  const { title, list_name, description, author, book_image } = book;
+  const bookInfo = {
+      title,
+      list_name,
+      description,
+      author,
+      book_image,
+      amazon: book.buy_links[0].url,
+      apple: book.buy_links[1].url,
+      bookShop: book.buy_links[4].url,
   }
+  if (bookStorage.length !== 0) {
+    const bookInStorage = bookStorage.find(book => book._id === bookInfo.id);
+    
+    if (!bookInStorage) {
+      bookStorage.push(bookInfo);
+      save('bookList', bookStorage);
+    }
+    return;
+  }
+  bookStorage.push(bookInfo);
+
+  save('bookList', bookStorage);
 }
+
+const save = (key, value) => {
+  try {
+    const serializedState = JSON.stringify(value);
+
+    localStorage.setItem(key, serializedState);
+  } catch (error) {
+    console.error('Set state error: ', error.message);
+  }
+};
+
+const remove = key => {
+  try {
+    localStorage.removeItem(key);
+  } catch (error) {
+    console.log('Remove item error: ', error.message);
+  }
+};
+
+const load = key => {
+  try {
+    const serializedState = localStorage.getItem(key);
+
+    return serializedState === null ? undefined : JSON.parse(serializedState);
+  } catch (error) {
+    console.error('Get state error: ', error.message);
+  }
+};
