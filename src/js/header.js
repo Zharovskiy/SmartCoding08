@@ -25,7 +25,15 @@ theme();
 // мобільне меню
 const burgerBtn = document.querySelector('.btn-menu');
 const mobMenu = document.getElementById('mobile-menu');
+const iconClose = document.querySelector(`.icon-menu-mobile`)
 burgerBtn.addEventListener('click', () => {
     mobMenu.classList.toggle("is-hidden");
+
+    if (mobMenu.classList.contains('is-hidden')) {
+        iconClose.setAttribute('href', './images/header/mobile-header-icon.svg#icon-left');
+    } else {
+        iconClose.setAttribute('href', './images/header/mobile-heder-icons.svg#icon-x-close');
+    }
+
 })
 // мобільне меню
