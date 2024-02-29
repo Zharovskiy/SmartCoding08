@@ -51,18 +51,23 @@ async function onOpenModalWindow(event) {
     console.log('помилка', error);
   }
 }
+
 async function createShoppingBtn(data) {
-  try {
-    const storage = await localStor.checkProduct(data); // отримати дані синхронно
-    if (storage.hasProd === false) {
-      addBtn();
-    } else {
-      removeBtn();
-    }
-  } catch (error) {
-    console.error("Error getting products from local storage:", error);
+  const storage = await localStorage.load('shopping-list');
+  if (!storage || storage.length === 0) {
+    addBtn();
+    return;
+  }
+
+  const addedBook = storage.find(book => book.id === data.id);
+
+  if (addedBook) {
+    removeBtn();
+  } else {
+    addBtn();
   }
 }
+
 function addBtn() {
   modalShoppingBtn.textContent = 'add to shopping list';
   // Додайте код для modalInfo, якщо це необхідно
@@ -119,6 +124,27 @@ function onCloseModalWindow() {
   window.removeEventListener('keydown', onEsc);
   closeBtn.removeEventListener('click', onCloseModalWindow);
 }
+
+
 function onUpdateShopList() {
-  localStor.putProducts(bookApi);
+  const storage = localStorage.load('shopping-list');
+  const id = document.querySelector('.book-category-item').dataset.id;
+  if (modalShoppingBtn.textContent === 'add to shopping list') {
+    localStorage.addBookToStorage(bookApi);
+    removeBtn();
+    countBook();
+  } else {
+    storage.forEach((book, ind, arr) => {
+      if (book.id === id) {
+        return arr.splice(ind, 1);
+      }
+    });
+
+    localStorage.save('shopping-list', storage);
+    if (storage.length === 0) {
+      localStorage.remove('shopping-list');
+    }
+    countBook();
+    addBtn();
+  }
 }

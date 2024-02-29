@@ -16,7 +16,7 @@ export class LocalStorage {
     // Повертає true якщо є книга чи false якщо немає
     checkProduct({id}) {
         let products = this.getProducts();
-        let index = products.findIndex(item => item.id == id);
+        let index = products.findIndex(item => item._id == id);
         const obj = {
             hasProd: false,
             index: index,
@@ -33,12 +33,13 @@ export class LocalStorage {
     // З shoppingList для видалення передавати обєкт з id типу {id: '155451558'}
     putProducts(books) {
         const resp = this.checkProduct(books);
+        const {hasProd, index, arrProd} = resp;
 
-        if(resp.hasProd !== true) {
-            resp.arrProd.push(books);
+        if(hasProd !== true) {
+            arrProd.push(books);
         } else {
-            resp.arrProd.splice(index, 1);
+            arrProd.splice(index, 1);
         } 
-        localStorage.setItem(this.keyName, JSON.stringify(resp.arrProd));
+        localStorage.setItem(this.keyName, JSON.stringify(arrProd));
     }
 }
