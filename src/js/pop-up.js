@@ -15,6 +15,8 @@ const container = document.querySelector('.modal-card');
 
 let bookApi = {};
 
+addListener()
+
 function addListener() {
   const bookContainer = document.querySelectorAll('.book-category-item');
   console.log(bookContainer)
