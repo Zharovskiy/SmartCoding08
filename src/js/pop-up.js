@@ -22,7 +22,7 @@ function addListener() {
     const clickedBook = event.target.closest('.book-category-item');
     if (clickedBook) {
       const bookId = clickedBook.dataset.id;
-      // console.log('Selected Book ID:', bookId);
+      console.log('Selected Book ID:', bookId);
       onOpenModalWindow(event);
     }
   });
