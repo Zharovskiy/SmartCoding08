@@ -1,6 +1,6 @@
 export class LocalStorage {
     constructor () {
-        this.keyName = 'shopping-list';
+        this.keyName = 'bookList';
     }
     
     // Повертає пустий массив якщо сховище пусте. Або повертає массив обьектів з книгами
