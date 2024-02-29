@@ -26,14 +26,27 @@ theme();
 const burgerBtn = document.querySelector('.btn-menu');
 const mobMenu = document.getElementById('mobile-menu');
 const iconClose = document.querySelector(`.icon-menu-mobile`)
+const header = document.querySelector(`.header`)
 burgerBtn.addEventListener('click', () => {
     mobMenu.classList.toggle("is-hidden");
 
     if (mobMenu.classList.contains('is-hidden')) {
+        header.classList.remove('cont-header-menu');
+
         iconClose.setAttribute('href', './images/header/mobile-header-icon.svg#icon-left');
     } else {
+        header.classList.add('cont-header-menu');
+        
         iconClose.setAttribute('href', './images/header/mobile-heder-icons.svg#icon-x-close');
     }
 
 })
+window.addEventListener('resize', () => {
+    
+    if (window.innerWidth >= 768) {
+        
+        header.classList.remove('cont-header-menu');
+    }
+});
+
 // мобільне меню
