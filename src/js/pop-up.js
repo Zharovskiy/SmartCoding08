@@ -3,18 +3,14 @@ import amazonpng from '../images/pop-up/amazon.png';
 import apple from '../images/pop-up/books.webp';
 import applepng from '../images/pop-up/books.png';
 import backendAPI from './fetchAPI';
-
 const backdrop = document.querySelector('.modal');
 const closeBtn = document.querySelector('.modal-close');
 const modalShoppingBtn = document.querySelector('.modal-add-to-cart');
 const container = document.querySelector('.modal-card');
-
 let bookApi = {};
-
 document.addEventListener('DOMContentLoaded', () => {
   addListener();
 });
-
 function addListener() {
   document.addEventListener('click', (event) => {
     const clickedBook = event.target.closest('.book-category-item');
@@ -25,7 +21,6 @@ function addListener() {
     }
   });
 }
-
 async function onOpenModalWindow(event) {
   document.body.style.overflow = 'hidden';
   backdrop.classList.remove('is-hidden');
@@ -49,26 +44,22 @@ async function onOpenModalWindow(event) {
     console.log('помилка', error);
   }
 }
-
 async function createShoppingBtn(data) {
   const storage = await load('bookList');
   if (!storage || storage.length === 0) {
     addBtn();
     return;
   }
-
-  const addedBook = storage.find(book => book._id === data.id);
-
+  const addedBook = storage.find(book => book._id === data._id);
   if (addedBook) {
     removeBtn();
   } else {
     addBtn();
   }
 }
-
 function onUpdateShopList() {
   const storage = load('bookList');
-  // const id = document.querySelector('.modal-book-name').textContent;
+  const id = bookApi._id; // Оновлено
   if (modalShoppingBtn.textContent === 'add to shopping list') {
     addBookToStorage(bookApi);
     removeBtn();
@@ -78,7 +69,6 @@ function onUpdateShopList() {
         return arr.splice(ind, 1);
       }
     });
-
     save('bookList', storage);
     if (storage.length === 0) {
       remove('bookList');
@@ -86,8 +76,6 @@ function onUpdateShopList() {
     addBtn();
   }
 }
-
-
 function addBtn() {
   modalShoppingBtn.textContent = 'add to shopping list';
   // Додайте код для modalInfo, якщо це необхідно
@@ -144,11 +132,11 @@ function onCloseModalWindow() {
   window.removeEventListener('keydown', onEsc);
   closeBtn.removeEventListener('click', onCloseModalWindow);
 }
-
 const addBookToStorage = book => {
   const bookStorage = load('bookList') || [];
-  const { title, list_name, description, author, book_image } = book;
+  const { _id, title, list_name, description, author, book_image } = book; // Оновлено
   const bookInfo = {
+      _id, // Оновлено
       title,
       list_name,
       description,
@@ -159,8 +147,7 @@ const addBookToStorage = book => {
       bookShop: book.buy_links[4].url,
   }
   if (bookStorage.length !== 0) {
-    const bookInStorage = bookStorage.find(book => book._id === bookInfo.id);
-    
+    const bookInStorage = bookStorage.find(book => book._id === bookInfo._id);
     if (!bookInStorage) {
       bookStorage.push(bookInfo);
       save('bookList', bookStorage);
@@ -168,20 +155,16 @@ const addBookToStorage = book => {
     return;
   }
   bookStorage.push(bookInfo);
-
   save('bookList', bookStorage);
 }
-
 const save = (key, value) => {
   try {
     const serializedState = JSON.stringify(value);
-
     localStorage.setItem(key, serializedState);
   } catch (error) {
     console.error('Set state error: ', error.message);
   }
 };
-
 const remove = key => {
   try {
     localStorage.removeItem(key);
@@ -189,11 +172,9 @@ const remove = key => {
     console.log('Remove item error: ', error.message);
   }
 };
-
 const load = key => {
   try {
     const serializedState = localStorage.getItem(key);
-
     return serializedState === null ? undefined : JSON.parse(serializedState);
   } catch (error) {
     console.error('Get state error: ', error.message);
