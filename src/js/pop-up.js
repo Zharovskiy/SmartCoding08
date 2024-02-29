@@ -36,7 +36,7 @@ async function onOpenModalWindow(event) {
   window.addEventListener('keydown', onEsc);
   closeBtn.addEventListener('click', onCloseModalWindow);
   try {
-    bookApi._id = event.currentTarget.dataset._id;
+    bookApi._id = event.currentTarget.dataset.id;
     const resp = await backendAPI.getBookDescription(_id);
     bookApi = resp;
     console.log(resp);
