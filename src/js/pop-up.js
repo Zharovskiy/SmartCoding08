@@ -4,25 +4,30 @@ import apple from '../images/pop-up/books.webp';
 import applepng from '../images/pop-up/books.png';
 import { LocalStorage } from './localStorage.js';
 import backendAPI from './fetchAPI';
+
 const localStor = new LocalStorage();
 const backdrop = document.querySelector('.modal');
 const closeBtn = document.querySelector('.modal-close');
 const modalShoppingBtn = document.querySelector('.modal-add-to-cart');
 const container = document.querySelector('.modal-card');
+
 let bookApi = {};
+
 document.addEventListener('DOMContentLoaded', () => {
   addListener();
 });
+
 function addListener() {
   document.addEventListener('click', (event) => {
     const clickedBook = event.target.closest('.book-category-item');
     if (clickedBook) {
       const bookId = clickedBook.dataset.id;
-      console.log('Selected Book ID:', bookId);
+      // console.log('Selected Book ID:', bookId);
       onOpenModalWindow(event);
     }
   });
 }
+
 async function onOpenModalWindow(event) {
   document.body.style.overflow = 'hidden';
   backdrop.classList.remove('is-hidden');
@@ -36,9 +41,7 @@ async function onOpenModalWindow(event) {
       return;
     }
     const bookId = bookContainer.dataset.id;
-    console.log('Selected Book ID (from onOpenModalWindow):', bookId);
     bookApi = await backendAPI.getBookDescription(bookId);
-    console.log(bookApi);
     createBookMarkup(bookApi);
     setTimeout(() => {
       createShoppingBtn(bookApi);
@@ -48,14 +51,13 @@ async function onOpenModalWindow(event) {
     console.log('помилка', error);
   }
 }
-function createShoppingBtn(data) {
+async function createShoppingBtn(data) {
   try {
-    const storage = localStor.getProductsSync(); // отримати дані синхронно
-    if (!storage || storage.length === 0) {
+    const storage = await localStor.checkProduct(data); // отримати дані синхронно
+    if (storage.hasProd === false) {
       addBtn();
     } else {
-      const addedBook = storage.find(book => book.title === data.title);
-      addedBook ? removeBtn() : addBtn();
+      removeBtn();
     }
   } catch (error) {
     console.error("Error getting products from local storage:", error);
@@ -118,5 +120,5 @@ function onCloseModalWindow() {
   closeBtn.removeEventListener('click', onCloseModalWindow);
 }
 function onUpdateShopList() {
-  // Оновити список покупок за допомогою логіки, яку ви маєте для додавання/видалення елементів.
+  localStor.putProducts(bookApi);
 }
