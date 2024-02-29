@@ -1,3 +1,13 @@
+import book322_1 from '../images/shopping-list/books_322_@1.webp';
+import book322_2 from '../images/shopping-list/books_322_@2.webp';
+import book322_11 from '../images/shopping-list/books_322_@1.png';
+import book322_22 from '../images/shopping-list/books_322_@2.png';
+import book265_1 from '../images/shopping-list/books_265_@1.webp';
+import book265_2 from '../images/shopping-list/books_265_@2.webp';
+import book265_11 from '../images/shopping-list/books_265_@1.png';
+import book265_22 from '../images/shopping-list/books_265_@2.png';
+
+
 import amazonImg from "../images/shopping-list/amazon.png";
 import amazonWebp from "../images/shopping-list/amazon.webp";
 import appleBook from "../images/shopping-list/apple.png";
