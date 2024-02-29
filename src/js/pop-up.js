@@ -14,12 +14,15 @@ const modalShoppingBtn = document.querySelector('.modal-add-to-cart');
 const container = document.querySelector('.modal-card');
 
 let bookApi = {};
-export default function addListener() {
+
+function addListener() {
   const bookContainer = document.querySelectorAll('.book-category-item');
   bookContainer.forEach(book =>
     book.addEventListener('click', onOpenModalWindow)
   );
 }
+
+addListener();
 
 async function onOpenModalWindow(event) {
   document.body.style.overflow = 'is-hidden';
@@ -28,8 +31,8 @@ async function onOpenModalWindow(event) {
   window.addEventListener('keydown', onEsc);
   closeBtn.addEventListener('click', onCloseModalWindow);
   try {
-    bookApi.bookId = event.currentTarget.dataset.id;
-    const resp = await backendAPI.getBookDescription();
+    bookApi._id = event.currentTarget.dataset._id;
+    const resp = await backendAPI.getBookDescription(_id);
     bookApi = resp;
     console.log(resp);
     createBookMarkup(bookApi);
