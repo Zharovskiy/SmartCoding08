@@ -1,4 +1,4 @@
-import"./assets/scroll-up-31c00165.js";const r=document.querySelector(".js-shopping-list"),i=o=>{try{const e=localStorage.getItem(o);return e?JSON.parse(e):[]}catch(e){return console.error("Error loading data from local storage:",e.message),[]}},n=(o,e)=>{try{const s=JSON.stringify(e);localStorage.setItem(o,s)}catch(s){console.error("Error saving data to local storage:",s.message)}},l=(o,e)=>{const t=i(e).filter(a=>a._id!==o);n(e,t),c(t)},c=o=>{if(o&&o.length>0){const e=o.map(t=>`
+import"./assets/scroll-up-700da4e6.js";const r=document.querySelector(".js-shopping-list"),i=o=>{try{const e=localStorage.getItem(o);return e?JSON.parse(e):[]}catch(e){return console.error("Error loading data from local storage:",e.message),[]}},n=(o,e)=>{try{const s=JSON.stringify(e);localStorage.setItem(o,s)}catch(s){console.error("Error saving data to local storage:",s.message)}},l=(o,e)=>{const t=i(e).filter(a=>a._id!==o);n(e,t),c(t)},c=o=>{if(o&&o.length>0){const e=o.map(t=>`
       <li class="shop-cart-container" data-id="${t._id}">
         <div class="shop-cart-wrap">
           <div class="shop-image-wrapper">
