@@ -76,7 +76,7 @@ const renderData = (data) => {
                         </li>
                     </ul>
                 </div>
-                <button class="shop-cart-btn" type="button" data-title="${book.title}">
+                <button class="shop-cart-btn" type="button" data-id="${book._id}">
                     <svg class="shop-cart-btn-trash">
                         <use href="${sprite}#trash"></use>
                     </svg>
@@ -88,7 +88,7 @@ const renderData = (data) => {
 
     listContainer.innerHTML = `<ul class="shop-cart-list">${markup}</ul>`;
     // Додаємо обробник подій для кожної кнопки видалення
-    const deleteButtons = document.querySelectorAll('.shop-cart-btn-delete');
+    const deleteButtons = document.querySelectorAll('.shop-cart-btn');
     deleteButtons.forEach(button => {
       button.addEventListener('click', () => {
         const bookId = button.dataset.id;
