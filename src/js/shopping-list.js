@@ -44,20 +44,48 @@ const deleteBook = (id, key) => {
 const renderData = (data) => {
   if (data && data.length > 0) {
     const markup = data.map(book => `
-      <li class="shop-cart-container" data-id="${book._id}">
+    <li class="shop-cart-container" data-id="${book._id}">
         <div class="shop-cart-wrap">
-          <div class="shop-image-wrapper">
-            <img class="shop-image" src="${book.book_image}" alt="${book.title}">
-          </div>
-          <div class="shop-cart-info">
-            <!-- Решта розмітки для кожної книги -->
-            <button class="shop-cart-btn-delete" data-id="${book._id}">
-              Delete
-            </button>
-          </div>
+            <div class="shop-image-wrapper">
+                <img class="shop-image" src="${book.book_image}" alt="${book.title}">
+            </div>
+            <div class="shop-cart-info">
+                <h2 class="shop-cart-title">${book.title}</h2>
+                <h3 class="shop-cart-category">${book.list_name}</h3>
+                <p class="shop-cart-description">${book.description}</p>
+                <div class="shop-cart-bottom-wrap">
+                    <h4 class="shop-cart-author">${book.author}</h4>
+                    <ul class="shop-cart-media">
+                        <li class="shop-cart-media-item">
+                            <a href="${book.amazon}" target="_blank" rel="noopener noreferrer">
+                                <picture>
+                                    <source srcset="${amazonWebp}" type="image/webp" />
+                                    <source srcset="${amazonImg}" type="image/png" />
+                                    <img class="media-icon amazon-icon" src="${amazonImg}" alt="Amazon logo" />
+                                </picture>
+                            </a>    
+                        </li>
+                        <li class="shop-cart-media-item">
+                            <a href="${book.apple}" target="_blank" rel="noopener noreferrer">
+                                <picture>
+                                    <source srcset="${appleWebp}" type="image/webp" />
+                                    <source srcset="${appleBook}" type="image/png" />
+                                    <img class="media-icon" src="${appleBook}" alt="Apple book logo" />
+                                </picture>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="shop-cart-btn" type="button" data-title="${book.title}">
+                    <svg class="shop-cart-btn-trash">
+                        <use href="${sprite}#trash"></use>
+                    </svg>
+                </button>
+            </div>
         </div>
-      </li>
+    </li> 
     `).join('');
+
     listContainer.innerHTML = `<ul class="shop-cart-list">${markup}</ul>`;
     // Додаємо обробник подій для кожної кнопки видалення
     const deleteButtons = document.querySelectorAll('.shop-cart-btn-delete');
