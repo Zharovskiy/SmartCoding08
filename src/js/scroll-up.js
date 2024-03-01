@@ -1,10 +1,11 @@
+import sprite from '../images/sprite.svg'
 
 document.addEventListener('DOMContentLoaded', function () {
     const scrollButton = document.createElement('button');
     scrollButton.classList.add('scroll-button');
     scrollButton.innerHTML = `
         <svg class="scroll-up-icon">
-            <use href="./images/sprite.svg#scroll-up"></use>
+            <use href="${sprite}#scroll-up"></use>
         </svg>
     `;
     document.body.appendChild(scrollButton);
