@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     scrollButton.classList.add('scroll-button');
     scrollButton.innerHTML = `
         <svg class="scroll-up-icon">
-            <use href="../images/sprite.svg#scroll-up"></use>
+            <use href="./images/sprite.svg#scroll-up"></use>
         </svg>
     `;
     document.body.appendChild(scrollButton);
