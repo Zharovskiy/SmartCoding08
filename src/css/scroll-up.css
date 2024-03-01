@@ -23,5 +23,9 @@
     height: 11px;
     width: 19px;
     fill: white;
-
  } 
+
+ .scroll-button:hover .scroll-up-icon{
+    transition: var(--transition-duration) var(--timing-function);
+    transform: scale(1.2);
+}
