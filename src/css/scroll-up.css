@@ -15,10 +15,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: default;
 }
 
 .scroll-button.show {
     opacity: 1;
+    cursor: pointer;
 }
 
 .scroll-button svg {
