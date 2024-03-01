@@ -17,6 +17,15 @@
     border: 1.50px solid var(--text-bestsellers);
     background: var(--header-bg);
     align-items: center;
+
+}
+.cont-header-menu{
+    position: fixed;
+    min-width: 375px;
+    z-index: 1;
+
+    left: 50%;
+    transform: translateX(-50%);
 }
 .list-header{
     display: flex;
@@ -88,6 +97,7 @@
         gap: 24px;
        
     }
+    
     .item-list-nav{
         padding: 8px 16px;
         border-radius: 36px;
