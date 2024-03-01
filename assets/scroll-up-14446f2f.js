@@ -3,4 +3,4 @@
             <use href="./images/sprite.svg#scroll-up"></use>
         </svg>
     `,document.body.appendChild(o);function n(){window.scrollTo({top:0,behavior:"smooth"})}o.addEventListener("click",n),window.addEventListener("scroll",function(){window.scrollY>100?o.classList.add("show"):o.classList.remove("show")})});
-//# sourceMappingURL=scroll-up-daec0bb7.js.map
+//# sourceMappingURL=scroll-up-14446f2f.js.map
