@@ -8,13 +8,9 @@
     border: 6px solid lightgrey;
     border-radius: 50%;
     background-color: blue;
-    font-size: 24px;
     cursor: pointer;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: default;
 }
 
@@ -23,9 +19,9 @@
     cursor: pointer;
 }
 
-.scroll-button svg {
-    position: absolute;
-    top: 33%;
-    left: 28%;
+.scroll-up-icon {
+    height: 11px;
+    width: 19px;
     fill: white;
+
  } 
