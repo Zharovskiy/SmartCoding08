@@ -1,4 +1,4 @@
-.toggle-theme{
+.toggle-theme {
     width: 40px;
     height: 24px;
     padding: 0;
@@ -7,7 +7,7 @@
     background-image: var(--toggl-bg);
     background-repeat: no-repeat;
     background-size: contain;
-    margin-right: 14pxж
+    margin-right: 14px;
 }
 
 .cont-header{
