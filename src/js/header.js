@@ -25,8 +25,8 @@ theme();
 // мобільне меню
 const burgerBtn = document.querySelector('.btn-menu');
 const mobMenu = document.getElementById('mobile-menu');
-const iconClose = document.querySelector(`.icon-menu-mobile`)
-const header = document.querySelector(`.header`)
+const iconClose = document.querySelector('.icon-menu-mobile');
+const header = document.querySelector('.header');
 burgerBtn.addEventListener('click', () => {
     mobMenu.classList.toggle("is-hidden");
 
