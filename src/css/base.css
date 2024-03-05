@@ -3,7 +3,7 @@ body {
     font-style: normal;
     font-weight: 400;
     background-color: var(--main-bg);
-    color: var(--text);
+    color: var(--color-black);
   }
   
   .visually-hidden {
@@ -18,6 +18,12 @@ body {
     clip: rect(0 0 0 0);
     overflow: hidden;
   }
+
+  .backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
   
   .container {
     max-width: 375px;
@@ -31,13 +37,19 @@ body {
     display: flex;
     flex-direction: column;
     gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   .sidebar {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding-top: 40px;
+  }
+
+  .home-page {
+    display: flex;
+    flex-direction: column;
   }
   
   @media screen and (min-width: 768px) and (max-width: 1439px) {
@@ -79,16 +91,4 @@ body {
       flex-direction: column;
       gap: 86px;
     }
-
-    .home-page {
-      display: flex;
-      flex-grow: 1;
-      padding-top: 40px;
-      flex-direction: column;
-    }
-    .list-nav{
-      display: flex;
-      align-items: center;
-      gap: 24px;
-  }
   }

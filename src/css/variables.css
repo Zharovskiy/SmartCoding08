@@ -23,14 +23,15 @@
     
     /* ===================================================================== */
     --main-bg: var(--color-white-1);
-    --toggl-bg: url(../images/header/switcher_whit.svg);
-    --icon-shopping: url(../images/header/icon-shopping_wight.svg);
     --text-bestsellers: var(--color-black);
+    --header-bg: var(--color-white);
+    --toggl-bg: url(../images/header/switcher_whit.svg);
+
+    --icon-shopping: url(../images/header/icon-shopping_wight.svg);
     --text-sb: var(--color-text);
     --scrollbar-bg: var(--color-gray);
     --btn-text: var(--color-white);
     --btn-bg: var(--color-blue);
-    --header-bg: var(--color-white);
     --modal-bg-color: var(--color-white);
     --border-color: var(--color-black);
     --icon-color: var(--color-black);
@@ -45,14 +46,15 @@
     
     :root[data-theme ='dark']{
       --main-bg: var(--color-black-1);
-      --toggl-bg: url(../images/header/switcher_dark.svg);
-      --icon-shopping: url(../images/header/icon-shopping_dark.svg);
       --text-bestsellers: var(--color-white);
+      --header-bg: var(--color-black);
+      --toggl-bg: url(../images/header/switcher_dark.svg);
+
+      --icon-shopping: url(../images/header/icon-shopping_dark.svg);
       --text-sb: var(--color-gray-1);
       --scrollbar-bg: var(--color-text);
       --btn-text: var(--color-black);
       --btn-bg: var(--color-yellow);
-      --header-bg: var(--color-black);
       --modal-bg-color: var(--color-black-1);
       --border-color: var(--color-white);
       --icon-color: var(--color-white);
