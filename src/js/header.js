@@ -48,14 +48,14 @@ window.addEventListener('resize', () => {
         header.classList.remove('cont-header-menu');
     }
 });
-
 // мобільне меню
 
+
 // підсвічування кнопок навігації по активній сторінці
-const homePage = document.querySelector('#home-page-active');
-const shopPage = document.querySelector('#shopping-page-active');
-const homeBtn = document.querySelector('#header-home-btn');
-const shopBtn = document.querySelector('#header-shop-btn');
+const homePage = document.getElementById('home-page-active');
+const shopPage = document.getElementById('shopping-page-active');
+const homeBtn = document.getElementById('header-home-btn');
+const shopBtn = document.getElementById('header-shop-btn');
 
 if(homePage !== null) {
     homeBtn.classList.add('list-nav-active');
@@ -64,5 +64,5 @@ if(homePage !== null) {
 if(shopPage !== null) {
     shopBtn.classList.add('list-nav-active');
 }
-
+// підсвічування кнопок навігації по активній сторінці
 
