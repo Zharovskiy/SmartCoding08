@@ -50,3 +50,19 @@ window.addEventListener('resize', () => {
 });
 
 // мобільне меню
+
+// підсвічування кнопок навігації по активній сторінці
+const homePage = document.querySelector('#home-page-active');
+const shopPage = document.querySelector('#shopping-page-active');
+const homeBtn = document.querySelector('#header-home-btn');
+const shopBtn = document.querySelector('#header-shop-btn');
+
+if(homePage !== null) {
+    homeBtn.classList.add('list-nav-active');
+}
+
+if(shopPage !== null) {
+    shopBtn.classList.add('list-nav-active');
+}
+
+
