@@ -33,11 +33,11 @@ burgerBtn.addEventListener('click', () => {
     if (mobMenu.classList.contains('is-hidden')) {
         header.classList.remove('cont-header-menu');
 
-        iconClose.setAttribute('href', '../images/sprite.svg#burger');
+        iconClose.setAttribute('href', './images/sprite.svg#burger');
     } else {
         header.classList.add('cont-header-menu');
         
-        iconClose.setAttribute('href', '../images/sprite.svg#x-close');
+        iconClose.setAttribute('href', './images/sprite.svg#x-close');
     }
 
 })
