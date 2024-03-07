@@ -1,7 +1,7 @@
 import amazon from '../images/pop-up/amazon.webp';
 import amazonpng from '../images/pop-up/amazon.png';
-import apple from '../images/pop-up/books.webp';
-import applepng from '../images/pop-up/books.png';
+import apple from '../images/pop-up/apple.webp';
+import applepng from '../images/pop-up/apple.png';
 import backendAPI from './fetchAPI';
 const backdrop = document.querySelector('.modal');
 const closeBtn = document.querySelector('.modal-close');
@@ -101,14 +101,14 @@ function createBookMarkup(book) {
           <picture class="modal-icon">
             <source srcset="${amazon}" type="image/webp"/>
             <source srcset="${amazonpng}" type="image/png"/>
-            <img src="${amazonpng}" alt="Amazon"/>
+            <img class="icon-link-amazon" src="${amazonpng}" alt="Amazon"/>
           </picture>
         </a>
         <a href="${book.buy_links[1].url}" target="_blank" rel="noopener noreferrer">
           <picture class="modal-icon">
             <source srcset="${apple}" type="image/webp"/>
             <source srcset="${applepng}" type="image/png"/>
-            <img src="${applepng}" alt="Apple Books"/>
+            <img class="icon-link-apple" src="${applepng}" alt="Apple Books"/>
           </picture>
         </a>
       </div>
@@ -180,3 +180,4 @@ const load = key => {
     console.error('Get state error: ', error.message);
   }
 };
+
