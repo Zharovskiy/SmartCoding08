@@ -39,6 +39,12 @@ async function onOpenModalWindow(event) {
     setTimeout(() => {
       createShoppingBtn(bookApi);
       modalShoppingBtn.addEventListener('click', onUpdateShopList);
+      // Додати клас inverted для іконки amazon
+      const iconAmazon = document.querySelector('.icon-link-amazon');
+      iconAmazon.classList.add('inverted');
+      // Додати клас inverted для іконки apple
+      const iconApple = document.querySelector('.icon-link-apple');
+      iconAmazon.classList.add('inverted');
     }, 0);
   } catch (error) {
     console.log('помилка', error);
@@ -131,7 +137,13 @@ function onCloseModalWindow() {
   backdrop.removeEventListener('click', onBackdrop);
   window.removeEventListener('keydown', onEsc);
   closeBtn.removeEventListener('click', onCloseModalWindow);
-}
+  // Видалити клас inverted для іконки amazon
+  const iconAmazon = document.querySelector('.icon-link-amazon');
+  iconAmazon.classList.remove('inverted');
+  // Видалити клас inverted для іконки apple
+  const iconApple = document.querySelector('.icon-link-apple');
+  iconAmazon.classList.remove('inverted');
+  }
 const addBookToStorage = book => {
   const bookStorage = load('bookList') || [];
   const { _id, title, list_name, description, author, book_image } = book; // Оновлено
