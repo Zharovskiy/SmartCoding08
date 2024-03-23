@@ -24,27 +24,39 @@ theme();
 
 // мобільне меню
 const burgerBtn = document.querySelector('.btn-menu');
+const iconBurger = document.getElementById('icon-burger');
+const iconClose = document.getElementById('icon-x-close');
 const mobMenu = document.getElementById('mobile-menu');
-const iconClose = document.querySelector('.icon-menu-mobile');
-const header = document.querySelector('.header');
-burgerBtn.addEventListener('click', () => {
-  mobMenu.classList.toggle('is-hidden');
 
-  if (mobMenu.classList.contains('is-hidden')) {
-    header.classList.remove('cont-header-menu');
-
-    iconClose.setAttribute('href', '../images/sprite.svg#burger');
-  } else {
-    header.classList.add('cont-header-menu');
-
-    iconClose.setAttribute('href', '../images/sprite.svg#x-close');
-  }
-});
+burgerBtn.addEventListener('click', toggleMobileMenu);
 window.addEventListener('resize', () => {
   if (window.innerWidth >= 768) {
-    header.classList.remove('cont-header-menu');
+    closeMobileMenu();
   }
 });
+
+function toggleMobileMenu() {
+  if (mobMenu.classList.contains('is-hidden')) {
+    openMobileMenu();
+  } else {
+    closeMobileMenu();
+  }
+}
+
+function openMobileMenu() {
+  mobMenu.classList.remove('is-hidden');
+  document.body.style.overflow = 'hidden';
+  iconBurger.classList.add('is-hidden');
+  iconClose.classList.remove('is-hidden');
+}
+
+function closeMobileMenu() {
+  mobMenu.classList.add('is-hidden');
+  document.body.style.overflow = 'visible';
+  iconClose.classList.add('is-hidden');
+  iconBurger.classList.remove('is-hidden');
+}
+
 // мобільне меню
 
 // підсвічування кнопок навігації по активній сторінці
