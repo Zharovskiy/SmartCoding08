@@ -29,6 +29,7 @@ const iconClose = document.getElementById('icon-x-close');
 const mobMenu = document.getElementById('mobile-menu');
 
 burgerBtn.addEventListener('click', toggleMobileMenu);
+
 window.addEventListener('resize', () => {
   if (window.innerWidth >= 768) {
     closeMobileMenu();
@@ -66,9 +67,14 @@ const shopBtn = document.getElementById('header-shop-btn');
 
 if (homePage !== null) {
   homeBtn.classList.add('list-nav-active');
+  homeBtn.querySelector('.link-nav').classList.add('text-nav-active');
 }
 
 if (shopPage !== null) {
   shopBtn.classList.add('list-nav-active');
+  shopBtn.querySelector('.link-nav').classList.add('text-nav-active');
+  shopBtn
+    .querySelector('.icon-shop-header')
+    .classList.add('icon-shop-header-active');
 }
 // підсвічування кнопок навігації по активній сторінці

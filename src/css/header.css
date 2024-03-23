@@ -4,7 +4,7 @@
   align-items: center;
   border-radius: 0 0 8px 8px;
   height: 64px;
-  border: 1.5px solid var(--text-bestsellers);
+  border: 1.5px solid var(--header-border);
   background: var(--header-bg);
 }
 
@@ -20,7 +20,7 @@
   font-size: 17px;
   line-height: 129%;
   font-family: var(--font-family-base);
-  color: var(--text-bestsellers);
+  color: var(--text-color-base);
   margin-right: 76px;
 }
 
@@ -36,7 +36,7 @@
 .toggle-theme {
   width: 40px;
   height: 24px;
-  background-image: var(--toggl-bg);
+  background-image: var(--header-switcher-theme);
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 14px;
@@ -48,7 +48,7 @@
 }
 
 .icon-burger {
-  stroke: var(--text-bestsellers);
+  stroke: var(--text-color-base);
   width: 100%;
   height: 100%;
   transition: all var(--transition-duration) var(--transition-timing-function);
@@ -58,7 +58,7 @@
   stroke: var(--color-blue);
 }
 
-@media screen and (min-width: 768px) and (max-width: 1439px) {
+@media screen and (min-width: 768px) {
   .cont-header {
     height: 72px;
   }
@@ -80,48 +80,9 @@
     transition: all var(--transition-duration) var(--transition-timing-function);
   }
 
-  .list-nav-active {
-    background-color: var(--color-yellow);
-  }
-
-  .link-nav {
-    display: flex;
-    gap: 4px;
-    width: 100%;
-    height: 100%;
-    color: var(--text-bestsellers);
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 129%;
-    letter-spacing: -0.04em;
-    text-transform: uppercase;
-  }
-
-  .btn-menu {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .cont-header {
-    height: 72px;
-  }
-
-  .list-nav {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-  }
-
-  .item-list-nav {
-    padding: 8px 16px;
-    border-radius: 36px;
-  }
-
-  .item-list-nav:hover,
-  .item-list-nav:focus {
-    background-color: var(--color-yellow);
-    transition: all var(--transition-duration) var(--transition-timing-function);
+  .item-list-nav:hover .link-nav,
+  .item-list-nav:focus .link-nav {
+    color: var(--color-black);
   }
 
   .list-nav-active {
@@ -133,12 +94,29 @@
     gap: 4px;
     width: 100%;
     height: 100%;
-    color: var(--text-bestsellers);
+    color: var(--text-color-base);
     font-weight: 700;
     font-size: 14px;
     line-height: 129%;
     letter-spacing: -0.04em;
     text-transform: uppercase;
+  }
+
+  .text-nav-active {
+    color: var(--color-black);
+  }
+
+  .icon-shop-header {
+    fill: var(--text-color-base);
+  }
+
+  .item-list-nav:hover .icon-shop-header,
+  .item-list-nav:focus .icon-shop-header {
+    fill: var(--color-black);
+  }
+
+  .icon-shop-header-active {
+    fill: var(--color-black);
   }
 
   .btn-menu {

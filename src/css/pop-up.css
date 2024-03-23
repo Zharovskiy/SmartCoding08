@@ -7,13 +7,6 @@
   background-color: rgba(17, 17, 17, 0.4);
 }
 
-.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-  display: none;
-}
-
 .modal-content {
   position: absolute;
   top: 50%;
