@@ -22,7 +22,7 @@ function theme() {
 theme();
 // кнопка перемикача
 
-// мобільне меню
+// open/close mob menu
 const burgerBtn = document.querySelector('.btn-menu');
 const iconBurger = document.getElementById('icon-burger');
 const iconClose = document.getElementById('icon-x-close');
@@ -56,8 +56,7 @@ function closeMobileMenu() {
   iconClose.classList.add('is-hidden');
   iconBurger.classList.remove('is-hidden');
 }
-
-// мобільне меню
+// open/close mob menu
 
 // підсвічування кнопок навігації по активній сторінці
 const homePage = document.getElementById('home-page-active');
