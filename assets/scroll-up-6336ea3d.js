@@ -3,4 +3,4 @@
             <use href="${k}#scroll"></use>
         </svg>
     `,document.body.appendChild(o);function n(){window.scrollTo({top:0,behavior:"smooth"})}o.addEventListener("click",n),window.addEventListener("scroll",function(){window.scrollY>100?o.classList.add("show"):o.classList.remove("show")})});export{k as s};
-//# sourceMappingURL=scroll-up-da1033c5.js.map
+//# sourceMappingURL=scroll-up-6336ea3d.js.map
