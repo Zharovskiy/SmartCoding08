@@ -1,20 +1,30 @@
-.cont-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-radius: 0 0 8px 8px;
+.header {
   height: 64px;
   border: 1.5px solid var(--header-border);
+  border-radius: 0 0 8px 8px;
   background: var(--header-bg);
 }
 
-.list-header {
-  display: flex;
+.header-fix-mob-menu {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
-.logo-header {
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 100%;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  height: 35px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -30,7 +40,7 @@
   display: none;
 }
 
-.buttons-header {
+.header-buttons {
   display: flex;
   align-items: center;
 }
@@ -61,8 +71,10 @@
 }
 
 @media screen and (min-width: 768px) {
-  .cont-header {
+  .header {
     height: 72px;
+    max-width: 768px;
+    margin: 0 auto;
   }
 
   .list-nav {
@@ -94,8 +106,6 @@
   .link-nav {
     display: flex;
     gap: 4px;
-    width: 100%;
-    height: 100%;
     color: var(--text-color-base);
     font-weight: 700;
     font-size: 14px;
@@ -123,5 +133,11 @@
 
   .btn-menu {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header {
+    max-width: 1440px;
   }
 }

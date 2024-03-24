@@ -1,10 +1,4 @@
 @media screen and (max-width: 767px) {
-  .header-fix-mob-menu {
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-  }
-
   .menu-container {
     display: flex;
     flex-direction: column;

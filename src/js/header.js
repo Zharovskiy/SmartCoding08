@@ -31,15 +31,6 @@ const header = document.querySelector('.header');
 
 burgerBtn.addEventListener('click', toggleMobileMenu);
 
-// Видалення глобального контейнера з мобільної версії для розтягування хедера на весь вюпорт
-window.addEventListener('resize', () => {
-  if (window.innerWidth <= 768) {
-    document.querySelector('.cont-header').classList.remove('container');
-  } else {
-    document.querySelector('.cont-header').classList.add('container');
-  }
-});
-
 // Закривання мобільного меню при виході з мобільного вюпорта
 window.addEventListener('resize', () => {
   if (window.innerWidth >= 768 && !mobMenu.classList.contains('is-hidden')) {
