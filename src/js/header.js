@@ -27,11 +27,22 @@ const burgerBtn = document.querySelector('.btn-menu');
 const iconBurger = document.getElementById('icon-burger');
 const iconClose = document.getElementById('icon-x-close');
 const mobMenu = document.getElementById('mobile-menu');
+const header = document.querySelector('.header');
 
 burgerBtn.addEventListener('click', toggleMobileMenu);
 
+// Видалення глобального контейнера з мобільної версії для розтягування хедера на весь вюпорт
 window.addEventListener('resize', () => {
-  if (window.innerWidth >= 768) {
+  if (window.innerWidth <= 768) {
+    document.querySelector('.cont-header').classList.remove('container');
+  } else {
+    document.querySelector('.cont-header').classList.add('container');
+  }
+});
+
+// Закривання мобільного меню при виході з мобільного вюпорта
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 768 && !mobMenu.classList.contains('is-hidden')) {
     closeMobileMenu();
   }
 });
@@ -49,6 +60,7 @@ function openMobileMenu() {
   document.body.style.overflow = 'hidden';
   iconBurger.classList.add('is-hidden');
   iconClose.classList.remove('is-hidden');
+  header.classList.add('header-fix-mob-menu');
 }
 
 function closeMobileMenu() {
@@ -56,6 +68,7 @@ function closeMobileMenu() {
   document.body.style.overflow = 'visible';
   iconClose.classList.add('is-hidden');
   iconBurger.classList.remove('is-hidden');
+  header.classList.remove('header-fix-mob-menu');
 }
 // open/close mob menu
 

@@ -2,6 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
   border-radius: 0 0 8px 8px;
   height: 64px;
   border: 1.5px solid var(--header-border);
