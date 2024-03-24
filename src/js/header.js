@@ -1,4 +1,21 @@
-// кнопка перемикача
+// підсвічування кнопок навігації по активній сторінці
+const homePage = document.getElementById('home-page-active');
+const shopPage = document.getElementById('shopping-page-active');
+const homeBtn = document.getElementById('header-home-btn');
+const shopBtn = document.getElementById('header-shop-btn');
+
+if (homePage !== null) {
+  homeBtn.classList.add('js-header-link-nav-active');
+}
+
+if (shopPage !== null) {
+  shopBtn.classList.add('js-header-link-nav-active');
+  shopBtn
+    .querySelector('.header-icon-shop')
+    .classList.add('js-header-icon-shop-active');
+}
+
+// кнопка перемикача теми
 function theme() {
   const toggleTheme = document.querySelector('.toggle-theme');
   let el = document.documentElement;
@@ -20,9 +37,8 @@ function theme() {
 }
 
 theme();
-// кнопка перемикача
 
-// open/close mob menu
+// Відкривання/закривання мобільного меню
 const burgerBtn = document.querySelector('.btn-menu');
 const iconBurger = document.getElementById('icon-burger');
 const iconClose = document.getElementById('icon-x-close');
@@ -31,7 +47,6 @@ const header = document.querySelector('.header');
 
 burgerBtn.addEventListener('click', toggleMobileMenu);
 
-// Закривання мобільного меню при виході з мобільного вюпорта
 window.addEventListener('resize', () => {
   if (window.innerWidth >= 768 && !mobMenu.classList.contains('is-hidden')) {
     closeMobileMenu();
@@ -51,7 +66,7 @@ function openMobileMenu() {
   document.body.style.overflow = 'hidden';
   iconBurger.classList.add('is-hidden');
   iconClose.classList.remove('is-hidden');
-  header.classList.add('header-fix-mob-menu');
+  header.classList.add('js-header-fix-mob-menu');
 }
 
 function closeMobileMenu() {
@@ -59,26 +74,5 @@ function closeMobileMenu() {
   document.body.style.overflow = 'visible';
   iconClose.classList.add('is-hidden');
   iconBurger.classList.remove('is-hidden');
-  header.classList.remove('header-fix-mob-menu');
+  header.classList.remove('js-header-fix-mob-menu');
 }
-// open/close mob menu
-
-// підсвічування кнопок навігації по активній сторінці
-const homePage = document.getElementById('home-page-active');
-const shopPage = document.getElementById('shopping-page-active');
-const homeBtn = document.getElementById('header-home-btn');
-const shopBtn = document.getElementById('header-shop-btn');
-
-if (homePage !== null) {
-  homeBtn.classList.add('list-nav-active');
-  homeBtn.querySelector('.link-nav').classList.add('text-nav-active');
-}
-
-if (shopPage !== null) {
-  shopBtn.classList.add('list-nav-active');
-  shopBtn.querySelector('.link-nav').classList.add('text-nav-active');
-  shopBtn
-    .querySelector('.icon-shop-header')
-    .classList.add('icon-shop-header-active');
-}
-// підсвічування кнопок навігації по активній сторінці

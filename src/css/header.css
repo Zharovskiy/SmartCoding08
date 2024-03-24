@@ -5,7 +5,7 @@
   background: var(--header-bg);
 }
 
-.header-fix-mob-menu {
+.js-header-fix-mob-menu {
   position: fixed;
   width: 100%;
   z-index: 1;
@@ -36,13 +36,14 @@
   margin-right: 76px;
 }
 
-.list-nav {
+.header-list-nav {
   display: none;
 }
 
 .header-buttons {
   display: flex;
   align-items: center;
+  gap: 14px;
 }
 
 .toggle-theme {
@@ -51,7 +52,6 @@
   background-image: var(--header-switcher-theme);
   background-repeat: no-repeat;
   background-size: contain;
-  margin-right: 14px;
 }
 
 .btn-menu {
@@ -77,33 +77,13 @@
     margin: 0 auto;
   }
 
-  .list-nav {
+  .header-list-nav {
     display: flex;
     align-items: center;
     gap: 24px;
   }
 
-  .item-list-nav {
-    padding: 8px 16px;
-    border-radius: 36px;
-  }
-
-  .item-list-nav:hover,
-  .item-list-nav:focus {
-    background-color: var(--color-yellow);
-    transition: all var(--transition-duration) var(--transition-timing-function);
-  }
-
-  .item-list-nav:hover .link-nav,
-  .item-list-nav:focus .link-nav {
-    color: var(--color-black);
-  }
-
-  .list-nav-active {
-    background-color: var(--color-yellow);
-  }
-
-  .link-nav {
+  .header-link-nav {
     display: flex;
     gap: 4px;
     color: var(--text-color-base);
@@ -112,22 +92,32 @@
     line-height: 129%;
     letter-spacing: -0.04em;
     text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 36px;
   }
 
-  .text-nav-active {
+  .header-link-nav:hover,
+  .header-link-nav:focus {
+    color: var(--color-black);
+    background-color: var(--color-yellow);
+    transition: all var(--transition-duration) var(--transition-timing-function);
+  }
+
+  .js-header-link-nav-active {
+    background-color: var(--color-yellow);
     color: var(--color-black);
   }
 
-  .icon-shop-header {
+  .header-icon-shop {
     fill: var(--text-color-base);
   }
 
-  .item-list-nav:hover .icon-shop-header,
-  .item-list-nav:focus .icon-shop-header {
+  .header-link-nav:hover .header-icon-shop,
+  .header-link-nav:focus .header-icon-shop {
     fill: var(--color-black);
   }
 
-  .icon-shop-header-active {
+  .js-header-icon-shop-active {
     fill: var(--color-black);
   }
 
