@@ -28,7 +28,7 @@
     transform: translateX(0);
   }
 
-  /*.mobile-image-books {
+  .mobile-image-books {
     position: relative;
     width: 100%;
   }
@@ -69,5 +69,5 @@
 
   .mobile-shopping-icon {
     fill: #ffffff;
-  } */
+  }
 }
