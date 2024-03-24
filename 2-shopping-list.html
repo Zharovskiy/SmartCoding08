@@ -9,8 +9,8 @@
     
     
     <script type="module" crossorigin src="/SmartCoding08/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/SmartCoding08/assets/scroll-up-d6012ad1.js">
-    <link rel="stylesheet" href="/SmartCoding08/assets/scroll-up-12511142.css">
+    <link rel="modulepreload" crossorigin href="/SmartCoding08/assets/scroll-up-6fa1ca86.js">
+    <link rel="stylesheet" href="/SmartCoding08/assets/scroll-up-1d9afb86.css">
     <link rel="stylesheet" href="/SmartCoding08/assets/2-shopping-list-3cab10e8.css">
   </head>
   <body id="shopping-page-active">
@@ -180,21 +180,20 @@
 
     <!-- Привязати клас is-hidden для приховування контейнеру menu-container-->
 
-<div
-  class="menu-container overlay js-menu-container is-hidden"
-  id="mobile-menu"
->
-  <div class="mobile-menu-list">
-    <a class="mobile-button" href="./index.html">Home</a>
-    <a class="mobile-shopping-list" href="./2-shopping-list.html"
-      >shopping-list
-      <svg class="mobile-shopping-icon" width="20" height="20">
-        <use href="/SmartCoding08/assets/sprite-aacbeb37.svg#shop"></use>
-      </svg>
-    </a>
-  </div>
+<div class="menu-container js-menu-container is-hidden" id="mobile-menu">
+  <ul class="mobile-menu-list">
+    <li class="item-list-nav" id="mob-menu-home-btn">
+      <a class="mobile-button" href="./index.html">home</a>
+    </li>
+    <li class="item-list-nav" id="mob-menu-shop-btn">
+      <a class="mobile-shopping-list" href="./2-shopping-list.html">shopping list
+        <svg class="mobile-shopping-icon" width="13.33" height="16.67">
+          <use href="/SmartCoding08/assets/sprite-aacbeb37.svg#shop"></use>
+        </svg>
+      </a>
+    </li>
+  </ul>
 </div>
-
 
     
   </body>
